@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/png" href="resized1_image.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Владислав · DCreator — сайты под ключ, SEO, ИИ-интеграции</title>
 <meta name="description" content="Веб-разработчик с 6+ годами опыта: разработка, редизайн, SEO, реклама и ИИ-интеграции. Сайты, которые приносят заявки.">
@@ -83,6 +84,19 @@ footer { border-top: 1px solid var(--line); margin-top: 80px; padding: 30px 20px
 .reveal { opacity: 0; transform: translateY(24px); transition: 0.7s cubic-bezier(0.2, 0.8, 0.2, 1); }
 .reveal.active { opacity: 1; transform: translateY(0); }
 
+/* Логотип */
+.logo img { height: 26px; width: auto; display: block; }
+.hero-logo { margin-bottom: 28px; }
+.hero-logo img {
+  width: 110px; height: auto; display: block;
+  /* Вариант А (прозрачный PNG): фон не нужен */
+  /* Вариант Б (белый фон): включи плашку ниже */
+}
+/* ВКЛЮЧИ ЭТО, ЕСЛИ ЛОГОТИП С БЕЛЫМ ФОНОМ (Вариант Б): */
+.hero-logo img, .logo img {
+  /* padding: 8px; border-radius: 14px; background: #fff; */
+}
+  
 /* Mobile */
 @media (max-width: 768px) {
   .nav-links { display: none; } /* Simplified for mobile, can be expanded */
@@ -96,7 +110,7 @@ footer { border-top: 1px solid var(--line); margin-top: 80px; padding: 30px 20px
 
 <header>
   <nav class="nav">
-    <a href="#" class="logo"><i></i> DCreator</a>
+    <a href="#" class="logo"><img src="resized1_image.png" alt="DCreator"> DCreator</a>
     <div class="nav-links">
       <a href="#about" data-i18n="nav.about">Обо мне</a>
       <a href="#services" data-i18n="nav.services">Услуги</a>
@@ -109,6 +123,7 @@ footer { border-top: 1px solid var(--line); margin-top: 80px; padding: 30px 20px
 
 <main>
   <section class="hero">
+    <div class="hero-logo"><img src="resized1_image.png" alt="DCreator logo"></div>
     <div class="kicker" data-i18n="hero.kicker">Веб-разработка · SEO · ИИ-интеграции</div>
     <h1 data-i18n="hero.title">Сайты, которые <span>приносят заявки</span>, а не просто существуют</h1>
     <p data-i18n="hero.sub">Я Владислав, основатель DCreator. 6+ лет закрываю полный цикл в одних руках: разработка, редизайн, дизайн, SEO, реклама и ИИ-интеграции. Один ответственный от брифа до измеримRESULTата.</p>
