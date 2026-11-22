@@ -2,17 +2,18 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<link rel="icon" type="image/png" href="resized1_image.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Владислав · DCreator — сайты под ключ, SEO, ИИ-интеграции</title>
+<title>Владислав · D Creator — сайты под ключ, SEO, ИИ-интеграции</title>
 <meta name="description" content="Веб-разработчик с 6+ годами опыта: разработка, редизайн, SEO, реклама и ИИ-интеграции. Сайты, которые приносят заявки.">
-<meta property="og:title" content="Владислав · DCreator">
+<meta property="og:title" content="Владислав · D Creator">
 <meta property="og:description" content="Full-cycle web developer: build, redesign, SEO, ads, AI integrations.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://morfiusmatrix66-code.github.io/">
+<meta property="og:image" content="https://morfiusmatrix66-code.github.io/logo.png">
+<link rel="icon" type="image/png" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg: #050B1A; --bg2: #0A1428; --surface: #0B1630; --surface2: #102040;
@@ -24,32 +25,40 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { background: var(--bg); color: var(--white); font-family: var(--fb); overflow-x: hidden; -webkit-font-smoothing: antialiased; line-height: 1.6; }
-body::before { content: ""; position: fixed; inset: 0; z-index: -1; background: radial-gradient(900px 500px at 10% -10%, rgba(11,92,255,0.2), transparent 60%), radial-gradient(800px 500px at 90% 0%, rgba(0,224,255,0.12), transparent 60%), linear-gradient(180deg, var(--bg), var(--bg2)); }
+body::before { content: ""; position: fixed; inset: 0; z-index: -1; background: radial-gradient(900px 500px at 10% -10%, rgba(11,92,255,0.22), transparent 60%), radial-gradient(800px 500px at 90% 0%, rgba(0,224,255,0.14), transparent 60%), linear-gradient(180deg, var(--bg), var(--bg2)); }
 a { color: var(--cyan); text-decoration: none; transition: 0.2s; }
 a:hover { color: var(--white); }
 :focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; border-radius: 6px; }
 
 /* Header */
-header { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(5, 11, 26, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
-.nav { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; }
-.logo { font-family: var(--fd); font-weight: 800; font-size: 18px; color: var(--white); display: flex; align-items: center; gap: 8px; }
-.logo i { width: 24px; height: 20px; background: linear-gradient(135deg, var(--blue), var(--cyan)); clip-path: polygon(0 0, 100% 0, 100% 62%, 62% 100%, 0 100%); display: inline-block; }
-.nav-links { display: flex; gap: 20px; align-items: center; }
+header { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(5, 11, 26, 0.88); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+.nav { max-width: 1140px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 14px 22px; }
+.logo { font-family: var(--fd); font-weight: 800; font-size: 18px; color: var(--white); display: flex; align-items: center; gap: 10px; }
+.logo img { height: 30px; width: auto; display: block; background: #fff; padding: 4px; border-radius: 8px; }
+.nav-links { display: flex; gap: 22px; align-items: center; }
 .nav-links a { color: var(--silver); font-size: 14px; font-weight: 500; }
 .nav-links a:hover { color: var(--cyan); }
 .lang-btn { background: var(--surface2); border: 1px solid var(--line); color: var(--white); font-weight: 700; font-size: 12px; border-radius: 8px; padding: 6px 12px; cursor: pointer; transition: 0.2s; }
 .lang-btn:hover { border-color: var(--cyan); }
 
 /* Layout */
-main { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+main { max-width: 1140px; margin: 0 auto; padding: 0 22px; }
 section { padding: 90px 0 10px; }
 h2 { font-family: var(--fd); font-weight: 800; font-size: clamp(26px, 4vw, 36px); margin-bottom: 8px; }
 .sub { color: var(--sky); font-size: 15px; margin-bottom: 32px; max-width: 600px; }
 
 /* Hero */
-.hero { padding-top: 140px; padding-bottom: 60px; }
-.kicker { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--cyan); font-weight: 700; margin-bottom: 16px; }
-h1 { font-family: var(--fd); font-weight: 800; font-size: clamp(36px, 6vw, 64px); line-height: 1.1; letter-spacing: -0.5px; margin-bottom: 24px; }
+.hero { padding-top: 130px; padding-bottom: 60px; }
+.hero-logo-wrap { margin-bottom: 32px; display: inline-block; }
+.hero-logo-wrap img {
+  width: 140px; height: auto; display: block;
+  background: #fff; padding: 14px; border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 224, 255, 0.15);
+  transition: transform 0.4s ease;
+}
+.hero-logo-wrap:hover img { transform: scale(1.05) rotate(-2deg); }
+.kicker { font-size: 13px; letter-spacing: 2.4px; text-transform: uppercase; color: var(--cyan); font-weight: 700; margin-bottom: 16px; }
+h1 { font-family: var(--fd); font-weight: 800; font-size: clamp(36px, 6vw, 64px); line-height: 1.08; letter-spacing: -0.5px; margin-bottom: 24px; }
 h1 span { background: linear-gradient(90deg, var(--blue), var(--cyan)); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .hero p { color: var(--silver); font-size: 17px; max-width: 640px; margin-bottom: 32px; line-height: 1.65; }
 .cta { display: flex; gap: 14px; flex-wrap: wrap; }
@@ -78,31 +87,20 @@ h1 span { background: linear-gradient(90deg, var(--blue), var(--cyan)); -webkit-
 .linksrow { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
 /* Footer */
-footer { border-top: 1px solid var(--line); margin-top: 80px; padding: 30px 20px; text-align: center; color: var(--sky); font-size: 13px; }
+footer { border-top: 1px solid var(--line); margin-top: 80px; padding: 30px 20px; text-align: center; color: var(--sky); font-size: 13px; display: flex; align-items: center; justify-content: center; gap: 10px; }
+footer img { height: 20px; width: auto; background: #fff; padding: 3px; border-radius: 6px; }
 
 /* Animations */
 .reveal { opacity: 0; transform: translateY(24px); transition: 0.7s cubic-bezier(0.2, 0.8, 0.2, 1); }
 .reveal.active { opacity: 1; transform: translateY(0); }
 
-/* Логотип */
-.logo img { height: 26px; width: auto; display: block; }
-.hero-logo { margin-bottom: 28px; }
-.hero-logo img {
-  width: 110px; height: auto; display: block;
-  /* Вариант А (прозрачный PNG): фон не нужен */
-  /* Вариант Б (белый фон): включи плашку ниже */
-}
-/* ВКЛЮЧИ ЭТО, ЕСЛИ ЛОГОТИП С БЕЛЫМ ФОНОМ (Вариант Б): */
-.hero-logo img, .logo img {
-  /* padding: 8px; border-radius: 14px; background: #fff; */
-}
-  
 /* Mobile */
 @media (max-width: 768px) {
-  .nav-links { display: none; } /* Simplified for mobile, can be expanded */
+  .nav-links { display: none; }
   .hero { padding-top: 110px; }
   .cta { flex-direction: column; }
   .btn { width: 100%; }
+  .hero-logo-wrap img { width: 110px; padding: 10px; border-radius: 16px; }
 }
 </style>
 </head>
@@ -110,7 +108,7 @@ footer { border-top: 1px solid var(--line); margin-top: 80px; padding: 30px 20px
 
 <header>
   <nav class="nav">
-    <a href="#" class="logo"><img src="resized1_image.png" alt="DCreator"> DCreator</a>
+    <a href="#" class="logo"><img src="logo.png" alt="D Creator"> D Creator</a>
     <div class="nav-links">
       <a href="#about" data-i18n="nav.about">Обо мне</a>
       <a href="#services" data-i18n="nav.services">Услуги</a>
@@ -123,10 +121,10 @@ footer { border-top: 1px solid var(--line); margin-top: 80px; padding: 30px 20px
 
 <main>
   <section class="hero">
-    <div class="hero-logo"><img src="resized1_image.png" alt="DCreator logo"></div>
+    <div class="hero-logo-wrap"><img src="logo.png" alt="D Creator logo"></div>
     <div class="kicker" data-i18n="hero.kicker">Веб-разработка · SEO · ИИ-интеграции</div>
     <h1 data-i18n="hero.title">Сайты, которые <span>приносят заявки</span>, а не просто существуют</h1>
-    <p data-i18n="hero.sub">Я Владислав, основатель DCreator. 6+ лет закрываю полный цикл в одних руках: разработка, редизайн, дизайн, SEO, реклама и ИИ-интеграции. Один ответственный от брифа до измеримRESULTата.</p>
+    <p data-i18n="hero.sub">Я Владислав, основатель D Creator. 6+ лет закрываю полный цикл в одних руках: разработка, редизайн, дизайн, SEO, реклама и ИИ-интеграции. Один ответственный от брифа до измеримого результата.</p>
     <div class="cta">
       <a href="#contact" class="btn p" data-i18n="hero.cta1">Связаться</a>
       <a href="https://github.com/morfiusmatrix66-code" target="_blank" class="btn s">GitHub ↗</a>
@@ -170,17 +168,17 @@ footer { border-top: 1px solid var(--line); margin-top: 80px; padding: 30px 20px
       <div class="card">
         <h3>Cover Studio</h3>
         <p data-i18n="w1d">Студия обложек ВК и Kwork: живые safe-зоны под мобильный кроп, экспорт PNG/SVG в полном размере.</p>
-        <a href="https://github.com/morfiusmatrix66-code" style="display:inline-block; margin-top:12px; font-size:13px; font-weight:700;">GitHub →</a>
+        <a href="https://github.com/morfiusmatrix66-code" target="_blank" style="display:inline-block; margin-top:12px; font-size:13px; font-weight:700;">GitHub →</a>
       </div>
       <div class="card">
         <h3>Blade Type Lab</h3>
         <p data-i18n="w2d">Кузница «лезвий» для кириллических заголовков: наклон, срезы и острия на терминалях, экспорт SVG/CSS.</p>
-        <a href="https://github.com/morfiusmatrix66-code" style="display:inline-block; margin-top:12px; font-size:13px; font-weight:700;">GitHub →</a>
+        <a href="https://github.com/morfiusmatrix66-code" target="_blank" style="display:inline-block; margin-top:12px; font-size:13px; font-weight:700;">GitHub →</a>
       </div>
       <div class="card">
         <h3>Logo Lab</h3>
         <p data-i18n="w3d">Векторный конструктор фирменного знака: палитры, подложки-аватары, градиенты и свечение.</p>
-        <a href="https://github.com/morfiusmatrix66-code" style="display:inline-block; margin-top:12px; font-size:13px; font-weight:700;">GitHub →</a>
+        <a href="https://github.com/morfiusmatrix66-code" target="_blank" style="display:inline-block; margin-top:12px; font-size:13px; font-weight:700;">GitHub →</a>
       </div>
     </div>
   </section>
@@ -192,26 +190,26 @@ footer { border-top: 1px solid var(--line); margin-top: 80px; padding: 30px 20px
       <div class="linksrow">
         <!-- ЗАМЕНИ ССЫЛКИ НИЖЕ НА СВОИ РЕАЛЬНЫЕ -->
         <a href="mailto:vladislav.dcreator@gmail.com" class="btn p" data-i18n="contact.email">Написать на почту</a>
-        <a href="https://t.me/D_Creators" target="_blank" class="btn s">Telegram</a>
-        <a href="https://www.linkedin.com/in/vladislav-dcreator/" target="_blank" class="btn s">LinkedIn</a>
+        <a href="https://t.me/your_telegram" target="_blank" class="btn s">Telegram</a>
+        <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" class="btn s">LinkedIn</a>
         <a href="https://github.com/morfiusmatrix66-code" target="_blank" class="btn s">GitHub</a>
       </div>
     </div>
-      </section>
+  </section>
 </main>
 
 <footer>
-  <span data-i18n="footer">Сделано DCreator · без шаблонов · HTML/CSS/JS</span>
+  <img src="logo.png" alt="D">
+  <span data-i18n="footer">Сделано D Creator · без шаблонов · HTML/CSS/JS</span>
 </footer>
 
 <script>
-// Языковой словарь
 const I18N = {
   ru: {
     "nav.about": "Обо мне", "nav.services": "Услуги", "nav.work": "Работы", "nav.contact": "Контакты",
     "hero.kicker": "Веб-разработка · SEO · ИИ-интеграции",
     "hero.title": "Сайты, которые <span>приносят заявки</span>, а не просто существуют",
-    "hero.sub": "Я Владислав, основатель DCreator. 6+ лет закрываю полный цикл в одних руках: разработка, редизайн, дизайн, SEO, реклама и ИИ-интеграции. Один ответственный от брифа до измеримого результата.",
+    "hero.sub": "Я Владислав, основатель D Creator. 6+ лет закрываю полный цикл в одних руках: разработка, редизайн, дизайн, SEO, реклама и ИИ-интеграции. Один ответственный от брифа до измеримого результата.",
     "hero.cta1": "Связаться",
     "about.h": "Обо мне", "about.sub": "Инженерный подход к веб-разработке",
     "about.c1t": "Техническая база", "about.c1d": "Высшее образование инженера-программиста. Пишу чистый, адаптивный код, а не просто 'собираю конструкторы'.",
@@ -229,13 +227,13 @@ const I18N = {
     "contact.h": "Связаться",
     "contact.p": "Открыт к удалённой работе в штате и на контракте (US/EU), фриланс-проектам и сотрудничеству. Отвечаю в течение дня. Напишите — разберу вашу задачу бесплатно.",
     "contact.email": "Написать на почту",
-    "footer": "Сделано DCreator · без шаблонов · HTML/CSS/JS"
+    "footer": "Сделано D Creator · без шаблонов · HTML/CSS/JS"
   },
   en: {
     "nav.about": "About", "nav.services": "Services", "nav.work": "Work", "nav.contact": "Contact",
     "hero.kicker": "Web development · SEO · AI integrations",
     "hero.title": "Websites that <span>bring leads</span>, not just exist",
-    "hero.sub": "I'm Vladislav, founder of DCreator. For 6+ years I've covered the full cycle in one pair of hands: development, redesign, design, SEO, paid ads and AI integrations. One owner from brief to measurable result.",
+    "hero.sub": "I'm Vladislav, founder of D Creator. For 6+ years I've covered the full cycle in one pair of hands: development, redesign, design, SEO, paid ads and AI integrations. One owner from brief to measurable result.",
     "hero.cta1": "Get in touch",
     "about.h": "About", "about.sub": "Engineering approach to web development",
     "about.c1t": "Technical base", "about.c1d": "Degree in software engineering. I write clean, responsive code, not just 'assemble builders'.",
@@ -253,7 +251,7 @@ const I18N = {
     "contact.h": "Get in touch",
     "contact.p": "Open to remote full-time & contract roles (US/EU), freelance projects and collaborations. I reply within a day. Write me — I'll review your task for free.",
     "contact.email": "Email me",
-    "footer": "Built by DCreator · no templates · HTML/CSS/JS"
+    "footer": "Built by D Creator · no templates · HTML/CSS/JS"
   }
 };
 
@@ -269,7 +267,7 @@ langToggle.addEventListener("click", () => {
     const key = el.getAttribute("data-i18n");
     if (I18N[currentLang][key]) {
       if (key === "hero.title") {
-        el.innerHTML = I18N[currentLang][key]; // Сохраняем <span> для градиента
+        el.innerHTML = I18N[currentLang][key];
       } else {
         el.textContent = I18N[currentLang][key];
       }
@@ -277,7 +275,6 @@ langToggle.addEventListener("click", () => {
   });
 });
 
-// Анимация появления при скролле
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
