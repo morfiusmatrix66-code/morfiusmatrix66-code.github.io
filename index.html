@@ -4,684 +4,285 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Владислав · DCreator — сайты под ключ, SEO, ИИ-интеграции</title>
-<meta name="description" content="Веб-разработчик с 6+ годами опыта: разработка, редизайн, SEO, реклама и ИИ-интеграции.">
+<meta name="description" content="Веб-разработчик 6+ лет: разработка, редизайн, SEO, реклама и ИИ-интеграции. Сайты, которые приносят заявки. Открыт к удалённой работе.">
 <meta property="og:title" content="Владислав · DCreator">
 <meta property="og:description" content="Full-cycle web developer: build, redesign, SEO, ads, AI integrations.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://morfiusmatrix66-code.github.io/">
 <meta property="og:image" content="https://morfiusmatrix66-code.github.io/logo.png">
+<meta name="theme-color" content="#030712">
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Vladislav","alternateName":"DCreator","jobTitle":"Web Developer","url":"https://morfiusmatrix66-code.github.io/","sameAs":["https://github.com/morfiusmatrix66-code"]}
+</script>
 <style>
-:root {
-  --bg: #030712;
-  --surface: rgba(15, 23, 42, 0.6);
-  --surface-hover: rgba(30, 41, 59, 0.8);
-  --border: rgba(148, 163, 184, 0.1);
-  --border-hover: rgba(56, 189, 248, 0.3);
-  --text: #f8fafc;
-  --text-muted: #94a3b8;
-  --accent: #38bdf8;
-  --accent2: #818cf8;
-  --accent3: #c084fc;
-  --glow: rgba(56, 189, 248, 0.15);
-  --fd: "Montserrat", system-ui, sans-serif;
-  --fb: "Inter", system-ui, sans-serif;
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { 
-  background: var(--bg); 
-  color: var(--text); 
-  font-family: var(--fb); 
-  overflow-x: hidden; 
-  -webkit-font-smoothing: antialiased;
-  line-height: 1.6;
-}
-
-/* Анимированный mesh-градиент фон */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  background: 
-    radial-gradient(circle at 20% 30%, rgba(56, 189, 248, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(129, 140, 248, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 50% 50%, rgba(192, 132, 252, 0.08) 0%, transparent 60%);
-  animation: meshMove 20s ease-in-out infinite;
-}
-
-@keyframes meshMove {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(30px, -30px) scale(1.1); }
-  66% { transform: translate(-20px, 20px) scale(0.95); }
-}
-
-/* Canvas для частиц */
-#particles {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-}
-
-/* Header с glassmorphism */
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 50;
-  background: rgba(3, 7, 18, 0.7);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-  transition: all 0.3s ease;
-}
-
-header.scrolled {
-  background: rgba(3, 7, 18, 0.9);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-}
-
-.nav {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px 24px;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-family: var(--fd);
-  font-weight: 800;
-  font-size: 18px;
-  color: var(--text);
-  text-decoration: none;
-}
-
-.logo-icon {
-  width: 40px;
-  height: 40px;
-  background: white;
-  border-radius: 10px;
-  padding: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 20px rgba(56, 189, 248, 0.3);
-  transition: transform 0.3s ease;
-}
-
-.logo:hover .logo-icon {
-  transform: rotate(-10deg) scale(1.1);
-}
-
-.logo-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.nav-links {
-  display: flex;
-  gap: 28px;
-  align-items: center;
-}
-
-.nav-links a {
-  color: var(--text-muted);
-  font-size: 14px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: color 0.2s;
-  position: relative;
-}
-
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent), var(--accent2));
-  transition: width 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: var(--text);
-}
-
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-.lang-btn {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  color: var(--text);
-  font-weight: 600;
-  font-size: 12px;
-  border-radius: 8px;
-  padding: 8px 14px;
-  cursor: pointer;
-  transition: all 0.2s;
-  backdrop-filter: blur(10px);
-}
-
-.lang-btn:hover {
-  border-color: var(--accent);
-  background: var(--surface-hover);
-  transform: translateY(-2px);
-}
-
-/* Layout */
-main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-section {
-  padding: 100px 0;
-}
-
-h2 {
-  font-family: var(--fd);
-  font-weight: 800;
-  font-size: clamp(32px, 5vw, 48px);
-  margin-bottom: 12px;
-  background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.sub {
-  color: var(--text-muted);
-  font-size: 16px;
-  margin-bottom: 48px;
-  max-width: 600px;
-}
-
-/* Hero */
-.hero {
-  padding-top: 160px;
-  padding-bottom: 80px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.hero-logo-wrap {
-  margin-bottom: 40px;
-  position: relative;
-}
-
-.hero-logo-wrap::before {
-  content: "";
-  position: absolute;
-  inset: -20px;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.3) 0%, transparent 70%);
-  border-radius: 50%;
-  animation: pulse 3s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { transform: scale(1); opacity: 0.5; }
-  50% { transform: scale(1.1); opacity: 0.8; }
-}
-
-.hero-logo-wrap img {
-  width: 160px;
-  height: auto;
-  display: block;
-  background: white;
-  padding: 20px;
-  border-radius: 24px;
-  box-shadow: 0 20px 60px rgba(56, 189, 248, 0.3);
-  position: relative;
-  z-index: 1;
-  animation: float 6s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-.kicker {
-  font-size: 14px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--accent);
-  font-weight: 600;
-  margin-bottom: 20px;
-  opacity: 0;
-  animation: fadeInUp 0.8s ease forwards 0.2s;
-}
-
-h1 {
-  font-family: var(--fd);
-  font-weight: 900;
-  font-size: clamp(40px, 7vw, 72px);
-  line-height: 1.1;
-  letter-spacing: -1px;
-  margin-bottom: 28px;
-  opacity: 0;
-  animation: fadeInUp 0.8s ease forwards 0.4s;
-}
-
-h1 span {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 50%, var(--accent3) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size: 200% 200%;
-  animation: gradientShift 5s ease infinite;
-}
-
-@keyframes gradientShift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
-.hero p {
-  color: var(--text-muted);
-  font-size: 18px;
-  max-width: 680px;
-  margin-bottom: 40px;
-  line-height: 1.7;
-  opacity: 0;
-  animation: fadeInUp 0.8s ease forwards 0.6s;
-}
-
-.cta {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  justify-content: center;
-  opacity: 0;
-  animation: fadeInUp 0.8s ease forwards 0.8s;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  font-size: 15px;
-  border-radius: 12px;
-  padding: 16px 32px;
-  transition: all 0.3s ease;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-  position: relative;
-  overflow: hidden;
-}
-
-.btn.p {
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
-  color: white;
-  box-shadow: 0 8px 30px rgba(56, 189, 248, 0.4);
-}
-
-.btn.p::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, var(--accent2), var(--accent3));
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.btn.p:hover::before {
-  opacity: 1;
-}
-
-.btn.p:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 40px rgba(56, 189, 248, 0.5);
-}
-
-.btn.p span {
-  position: relative;
-  z-index: 1;
-}
-
-.btn.s {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  color: var(--text);
-  backdrop-filter: blur(10px);
-}
-
-.btn.s:hover {
-  border-color: var(--accent);
-  background: var(--surface-hover);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 30px rgba(56, 189, 248, 0.2);
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Grids */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px;
-}
-
-.card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 32px;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-  backdrop-filter: blur(10px);
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent3));
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-8px);
-  border-color: var(--border-hover);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-  background: var(--surface-hover);
-}
-
-.card:hover::before {
-  opacity: 1;
-}
-
-.card h3 {
-  font-family: var(--fd);
-  font-size: 20px;
-  margin-bottom: 12px;
-  color: var(--text);
-  font-weight: 700;
-}
-
-.card p {
-  color: var(--text-muted);
-  font-size: 15px;
-  line-height: 1.7;
-}
-
-.card .n {
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  font-family: var(--fd);
-  font-weight: 900;
-  font-size: 48px;
-  color: rgba(56, 189, 248, 0.1);
-  line-height: 1;
-}
-
-/* Process */
-.steps {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 24px;
-  counter-reset: step;
-}
-
-.stepc {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 32px;
-  position: relative;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-}
-
-.stepc:hover {
-  border-color: var(--border-hover);
-  transform: translateY(-4px);
-}
-
-.stepc::before {
-  counter-increment: step;
-  content: "0" counter(step);
-  font-family: var(--fd);
-  font-weight: 900;
-  font-size: 48px;
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: block;
-  margin-bottom: 16px;
-  line-height: 1;
-}
-
-.stepc h3 {
-  font-family: var(--fd);
-  font-size: 18px;
-  margin-bottom: 10px;
-  color: var(--text);
-}
-
-.stepc p {
-  color: var(--text-muted);
-  font-size: 14px;
-  line-height: 1.7;
-}
-
-/* Contact */
-.contactbox {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 24px;
-  padding: 60px 32px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  backdrop-filter: blur(10px);
-}
-
-.contactbox::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, transparent 70%);
-  animation: rotate 20s linear infinite;
-}
-
-@keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.contactbox > * {
-  position: relative;
-  z-index: 1;
-}
-
-.contactbox p {
-  color: var(--text-muted);
-  max-width: 560px;
-  margin: 16px auto 32px;
-  line-height: 1.7;
-  font-size: 16px;
-}
-
-.linksrow {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* Footer */
-footer {
-  border-top: 1px solid var(--border);
-  padding: 40px 24px;
-  text-align: center;
-  color: var(--text-muted);
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-}
-
-footer img {
-  height: 24px;
-  width: auto;
-  background: white;
-  padding: 4px;
-  border-radius: 6px;
-}
-
-/* Animations */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .nav-links { display: none; }
-  .hero { padding-top: 120px; }
-  .hero-logo-wrap img { width: 120px; padding: 16px; }
-  .cta { flex-direction: column; width: 100%; }
-  .btn { width: 100%; }
-  section { padding: 60px 0; }
-  .grid { grid-template-columns: 1fr; }
-}
+:root{
+  --bg:#030712; --surface:rgba(15,23,42,.55); --surface2:rgba(30,41,59,.7);
+  --border:rgba(148,163,184,.12); --border-hi:rgba(56,189,248,.35);
+  --text:#f8fafc; --muted:#94a3b8; --dim:#64748b;
+  --c1:#38bdf8; --c2:#818cf8; --c3:#c084fc;
+  --fd:"Montserrat",system-ui,sans-serif; --fb:"Inter",system-ui,sans-serif; --fm:"JetBrains Mono",ui-monospace,monospace;
+  --r:20px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--fb);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+body::before{content:"";position:fixed;inset:0;z-index:-2;background:
+  radial-gradient(circle at 18% 28%,rgba(56,189,248,.16) 0%,transparent 45%),
+  radial-gradient(circle at 82% 68%,rgba(129,140,248,.16) 0%,transparent 45%),
+  radial-gradient(circle at 55% 95%,rgba(192,132,252,.10) 0%,transparent 55%);
+  animation:mesh 24s ease-in-out infinite}
+@keyframes mesh{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(28px,-24px) scale(1.08)}66%{transform:translate(-22px,18px) scale(.96)}}
+#particles{position:fixed;inset:0;z-index:-1;pointer-events:none}
+a{color:var(--c1);text-decoration:none;transition:.2s}
+:focus-visible{outline:2px solid var(--c1);outline-offset:3px;border-radius:8px}
+.skip{position:absolute;left:-999px;top:0;z-index:100;background:var(--c1);color:#03122a;padding:10px 16px;border-radius:8px;font-weight:700}
+.skip:focus{left:12px;top:12px}
+
+/* progress bar */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3));box-shadow:0 0 12px var(--c1)}
+
+/* custom cursor */
+#cursor{position:fixed;top:0;left:0;width:26px;height:26px;border-radius:50%;z-index:70;pointer-events:none;mix-blend-mode:screen;
+  background:radial-gradient(circle,rgba(56,189,248,.5),transparent 70%);transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s;display:none}
+@media(pointer:fine){#cursor{display:block}}
+
+/* header */
+header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(3,7,18,.6);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--border);transition:.3s}
+header.scrolled{background:rgba(3,7,18,.9);box-shadow:0 6px 30px rgba(0,0,0,.4)}
+.nav{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px}
+.logo{display:flex;align-items:center;gap:12px;font-family:var(--fd);font-weight:800;font-size:18px;color:var(--text)}
+.logo-icon{width:42px;height:42px;border-radius:12px;padding:5px;background:#fff;display:grid;place-items:center;
+  box-shadow:0 0 0 1px rgba(56,189,248,.4),0 6px 22px rgba(56,189,248,.35);transition:.3s}
+.logo:hover .logo-icon{transform:rotate(-8deg) scale(1.08)}
+.logo-icon img{width:100%;height:100%;object-fit:contain}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{color:var(--muted);font-size:14px;font-weight:500;position:relative}
+.nav-links a::after{content:"";position:absolute;bottom:-5px;left:0;width:0;height:2px;background:linear-gradient(90deg,var(--c1),var(--c2));transition:width .3s}
+.nav-links a:hover{color:var(--text)}.nav-links a:hover::after{width:100%}
+.lang-btn{background:var(--surface);border:1px solid var(--border);color:var(--text);font-weight:600;font-size:12px;border-radius:8px;padding:8px 14px;cursor:pointer;transition:.2s}
+.lang-btn:hover{border-color:var(--c1);transform:translateY(-2px)}
+
+main{max-width:1200px;margin:0 auto;padding:0 24px}
+section{padding:96px 0}
+h2{font-family:var(--fd);font-weight:900;font-size:clamp(30px,4.6vw,46px);margin-bottom:10px;letter-spacing:-.5px}
+.sub{color:var(--muted);font-size:16px;margin-bottom:44px;max-width:620px}
+
+/* hero */
+.hero{padding-top:150px;padding-bottom:64px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.hero-logo-wrap{margin-bottom:36px;position:relative}
+.hero-logo-wrap::before{content:"";position:absolute;inset:-26px;border-radius:50%;background:radial-gradient(circle,rgba(56,189,248,.35),transparent 70%);animation:pulse 3.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.12);opacity:.85}}
+.hero-logo-wrap img{width:150px;height:auto;display:block;background:#fff;padding:18px;border-radius:22px;position:relative;z-index:1;
+  box-shadow:0 20px 60px rgba(56,189,248,.3),0 0 0 1px rgba(56,189,248,.5);animation:float 6s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.kicker{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--c1);font-weight:600;margin-bottom:18px;font-family:var(--fm)}
+h1{font-family:var(--fd);font-weight:900;font-size:clamp(38px,6.6vw,70px);line-height:1.08;letter-spacing:-1px;margin-bottom:24px;max-width:900px}
+h1 span{background:linear-gradient(135deg,var(--c1),var(--c2) 50%,var(--c3));-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 200%;animation:grad 6s ease infinite}
+@keyframes grad{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.hero p{color:var(--muted);font-size:18px;max-width:680px;margin-bottom:36px}
+.cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;font-weight:600;font-size:15px;border-radius:12px;padding:15px 30px;transition:.25s;border:none;cursor:pointer;position:relative;overflow:hidden}
+.btn.p{background:linear-gradient(135deg,var(--c1),var(--c2));color:#03122a;box-shadow:0 8px 30px rgba(56,189,248,.4)}
+.btn.p:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(56,189,248,.55)}
+.btn.s{background:var(--surface);border:1px solid var(--border);color:var(--text);backdrop-filter:blur(8px)}
+.btn.s:hover{border-color:var(--c1);transform:translateY(-3px)}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin:64px 0 0;width:100%}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px 16px;text-align:center;backdrop-filter:blur(8px)}
+.stat b{font-family:var(--fd);font-weight:900;font-size:34px;display:block;background:linear-gradient(135deg,var(--c1),var(--c3));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{color:var(--muted);font-size:13px}
+
+/* marquee */
+.marquee{overflow:hidden;border-block:1px solid var(--border);padding:18px 0;margin:24px 0 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.marquee-track{display:flex;gap:40px;width:max-content;animation:scroll 28s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-track span{font-family:var(--fm);font-size:14px;color:var(--muted);white-space:nowrap;letter-spacing:.5px}
+.marquee-track span::before{content:"◆";color:var(--c1);margin-right:40px}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* bento grid */
+.bento{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tile{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:28px;position:relative;overflow:hidden;backdrop-filter:blur(10px);transition:border-color .3s,transform .3s}
+.tile::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;
+  background:radial-gradient(220px circle at var(--mx,50%) var(--my,50%),rgba(56,189,248,.18),transparent 60%)}
+.tile:hover::before{opacity:1}
+.tile:hover{border-color:var(--border-hi)}
+.tile .n{font-family:var(--fd);font-weight:900;font-size:42px;color:rgba(56,189,248,.12);line-height:1;margin-bottom:14px}
+.tile h3{font-family:var(--fd);font-size:19px;margin-bottom:10px}
+.tile p{color:var(--muted);font-size:14.5px}
+.tile.big{grid-column:span 2;grid-row:span 2;display:flex;flex-direction:column;justify-content:space-between}
+.tile.big .n{font-size:64px}
+.tile.wide{grid-column:span 2}
+.tile .tag{display:inline-block;font-family:var(--fm);font-size:11px;color:var(--c1);border:1px solid var(--border-hi);border-radius:99px;padding:3px 10px;margin-bottom:14px}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;counter-reset:s}
+.stepc{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:26px;transition:.3s;position:relative;overflow:hidden}
+.stepc::before{counter-increment:s;content:"0" counter(s);font-family:var(--fd);font-weight:900;font-size:44px;background:linear-gradient(135deg,var(--c1),var(--c2));-webkit-background-clip:text;background-clip:text;color:transparent;display:block;margin-bottom:12px;line-height:1}
+.stepc:hover{transform:translateY(-4px);border-color:var(--border-hi)}
+.stepc h3{font-family:var(--fd);font-size:17px;margin-bottom:8px}
+.stepc p{color:var(--muted);font-size:13.5px}
+
+/* testimonials */
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.quote{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:26px;backdrop-filter:blur(8px)}
+.quote p{color:var(--text);font-size:15px;margin-bottom:16px;font-style:italic}
+.quote .who{display:flex;align-items:center;gap:12px}
+.quote .av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--c1),var(--c3));display:grid;place-items:center;font-family:var(--fd);font-weight:800;color:#03122a}
+.quote .who b{font-size:14px}.quote .who span{display:block;color:var(--muted);font-size:12px}
+
+/* faq */
+.faq details{background:var(--surface);border:1px solid var(--border);border-radius:14px;margin-bottom:10px;overflow:hidden;transition:.2s}
+.faq details[open]{border-color:var(--border-hi)}
+.faq summary{list-style:none;cursor:pointer;padding:18px 22px;font-weight:600;font-size:15px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--fm);font-size:22px;color:var(--c1);transition:.2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq .ans{padding:0 22px 18px;color:var(--muted);font-size:14px;line-height:1.7}
+
+/* contact */
+.contactbox{background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:56px 28px;text-align:center;position:relative;overflow:hidden;backdrop-filter:blur(10px)}
+.contactbox::before{content:"";position:absolute;inset:-50%;background:conic-gradient(from 0deg,transparent,rgba(56,189,248,.12),transparent 40%);animation:spin 16s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.contactbox>*{position:relative;z-index:1}
+.contactbox p{color:var(--muted);max-width:560px;margin:14px auto 30px;font-size:16px}
+.linksrow{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+footer{border-top:1px solid var(--border);padding:36px 24px;text-align:center;color:var(--muted);font-size:13px;display:flex;align-items:center;justify-content:center;gap:12px}
+footer img{height:22px;width:auto;background:#fff;padding:3px;border-radius:6px}
+
+.reveal{opacity:0;transform:translateY(40px);transition:.8s cubic-bezier(.4,0,.2,1)}
+.reveal.active{opacity:1;transform:none}
+
+@media(max-width:860px){.bento{grid-template-columns:repeat(2,1fr)}.tile.big{grid-column:span 2;grid-row:auto}.tile.wide{grid-column:span 2}}
+@media(max-width:600px){.nav-links{display:none}.hero{padding-top:120px}.hero-logo-wrap img{width:120px;padding:14px}.cta{flex-direction:column;width:100%}.btn{width:100%}.bento{grid-template-columns:1fr}.tile.big,.tile.wide{grid-column:auto}section{padding:64px 0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}.reveal{opacity:1;transform:none}.hero-logo-wrap img{animation:none}}
 </style>
 </head>
 <body>
-
+<a href="#main" class="skip">Перейти к содержимому</a>
 <canvas id="particles"></canvas>
+<div id="progress"></div>
+<div id="cursor"></div>
 
 <header id="header">
   <nav class="nav">
-    <a href="#" class="logo">
-      <div class="logo-icon"><img src="logo.png" alt="DCreator"></div>
-      DCreator
-    </a>
+    <a href="#" class="logo"><span class="logo-icon"><img src="logo.png" alt="DCreator"></span> DCreator</a>
     <div class="nav-links">
       <a href="#about" data-i18n="nav.about">Обо мне</a>
       <a href="#services" data-i18n="nav.services">Услуги</a>
       <a href="#work" data-i18n="nav.work">Работы</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
       <a href="#contact" data-i18n="nav.contact">Контакты</a>
       <button class="lang-btn" id="langToggle">EN</button>
     </div>
   </nav>
 </header>
 
-<main>
+<main id="main">
   <section class="hero">
     <div class="hero-logo-wrap"><img src="logo.png" alt="DCreator logo"></div>
-    <div class="kicker" data-i18n="hero.kicker">Веб-разработка · SEO · ИИ-интеграции</div>
+    <div class="kicker" data-scramble>WEB · SEO · AI · DESIGN</div>
     <h1 data-i18n="hero.title">Сайты, которые <span>приносят заявки</span>, а не просто существуют</h1>
     <p data-i18n="hero.sub">Я Владислав, основатель DCreator. 6+ лет закрываю полный цикл в одних руках: разработка, редизайн, дизайн, SEO, реклама и ИИ-интеграции. Один ответственный от брифа до измеримого результата.</p>
     <div class="cta">
-      <a href="#contact" class="btn p"><span data-i18n="hero.cta1">Связаться</span></a>
-      <a href="https://github.com/morfiusmatrix66-code" target="_blank" class="btn s">GitHub ↗</a>
+      <a href="#contact" class="btn p magnetic"><span data-i18n="hero.cta1">Связаться</span></a>
+      <a href="https://github.com/morfiusmatrix66-code" target="_blank" rel="noopener" class="btn s">GitHub ↗</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b data-count="6" data-suffix="+">0</b><span data-i18n="stat.years">лет в разработке</span></div>
+      <div class="stat"><b data-count="100" data-suffix="+">0</b><span data-i18n="stat.projects">проектов</span></div>
+      <div class="stat"><b data-count="98" data-suffix="%">0</b><span data-i18n="stat.retention">клиентов возвращаются</span></div>
+      <div class="stat"><b data-count="24" data-suffix="h">0</b><span data-i18n="stat.reply">среднее время ответа</span></div>
     </div>
   </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>HTML</span><span>CSS</span><span>JavaScript</span><span>TypeScript</span><span>React</span><span>Node.js</span><span>Python</span><span>PHP</span><span>WordPress</span><span>SEO</span><span>Google Ads</span><span>Meta Ads</span><span>Figma</span><span>AI / LLM</span><span>Git</span>
+      <span>HTML</span><span>CSS</span><span>JavaScript</span><span>TypeScript</span><span>React</span><span>Node.js</span><span>Python</span><span>PHP</span><span>WordPress</span><span>SEO</span><span>Google Ads</span><span>Meta Ads</span><span>Figma</span><span>AI / LLM</span><span>Git</span>
+    </div>
+  </div>
 
   <section id="about" class="reveal">
     <h2 data-i18n="about.h">Обо мне</h2>
     <div class="sub" data-i18n="about.sub">Инженерный подход к веб-разработке</div>
-    <div class="grid">
-      <div class="card">
-        <h3 data-i18n="about.c1t">Техническая база</h3>
-        <p data-i18n="about.c1d">Высшее образование инженера-программиста. Пишу чистый, адаптивный код, а не просто "собираю конструкторы".</p>
-      </div>
-      <div class="card">
-        <h3 data-i18n="about.c2t">Full-cycle подход</h3>
-        <p data-i18n="about.c2d">Не передаю задачу по цепочке. От прототипа и дизайна до SEO-настройки и аналитики — всё под моим контролем.</p>
-      </div>
-      <div class="card">
-        <h3 data-i18n="about.c3t">Open Source</h3>
-        <p data-i18n="about.c3d">Сам создаю и выкладываю в открытый доступ инструменты для автоматизации: генераторы обложек, типографические лаборатории.</p>
-      </div>
+    <div class="bento">
+      <div class="tile big tilt"><div><div class="n">01</div><h3 data-i18n="about.c1t">Техническая база</h3><p data-i18n="about.c1d">Высшее образование инженера-программиста. Пишу чистый, адаптивный и быстрый код, а не собираю конструкторы.</p></div><span class="tag">ENGINEERING</span></div>
+      <div class="tile tilt"><div class="n">02</div><h3 data-i18n="about.c2t">Full-cycle</h3><p data-i18n="about.c2d">От прототипа и дизайна до SEO и аналитики — всё под одним контролем.</p></div>
+      <div class="tile tilt"><div class="n">03</div><h3 data-i18n="about.c3t">Open Source</h3><p data-i18n="about.c3d">Создаю и публикую свои инструменты автоматизации.</p></div>
+      <div class="tile wide tilt"><div class="n">04</div><h3 data-i18n="about.c4t">Результат в цифрах</h3><p data-i18n="about.c4d">Меряю успех трафиком, заявками и выручкой, а не «красиво».</p></div>
     </div>
   </section>
 
   <section id="services" class="reveal">
     <h2 data-i18n="services.h">Услуги</h2>
     <div class="sub" data-i18n="services.sub">Полный цикл в одних руках</div>
-    <div class="grid">
-      <div class="card"><span class="n">01</span><h3 data-i18n="s1t">Разработка под ключ</h3><p data-i18n="s1d">Лендинги, корпоративные сайты и e-commerce: адаптивные, быстрые, с настроенной аналитикой.</p></div>
-      <div class="card"><span class="n">02</span><h3 data-i18n="s2t">Редизайн</h3><p data-i18n="s2d">Превращаю устаревшие сайты в современные продукты: новый интерфейс, ускорение загрузки, понятный путь к заявке.</p></div>
-      <div class="card"><span class="n">03</span><h3 data-i18n="s3t">SEO и реклама</h3><p data-i18n="s3d">Техническое SEO, семантика, оптимизация скорости. Настройка кампаний и отчётность по стоимости лида.</p></div>
-      <div class="card"><span class="n">04</span><h3 data-i18n="s4t">ИИ-интеграции</h3><p data-i18n="s4d">Чат-ассистенты, контент-конвейеры и автоматизация рутины, встроенные в реальный продукт.</p></div>
+    <div class="bento">
+      <div class="tile wide tilt"><div class="n">01</div><h3 data-i18n="s1t">Разработка под ключ</h3><p data-i18n="s1d">Лендинги, корпоративные сайты и e-commerce: адаптивные, быстрые, с настроенной аналитикой.</p></div>
+      <div class="tile tilt"><div class="n">02</div><h3 data-i18n="s2t">Редизайн</h3><p data-i18n="s2d">Устаревший сайт → современный продукт с понятным путём к заявке.</p></div>
+      <div class="tile tilt"><div class="n">03</div><h3 data-i18n="s3t">SEO и реклама</h3><p data-i18n="s3d">Техническое SEO, кампании, отчётность по стоимости лида.</p></div>
+      <div class="tile tilt"><div class="n">04</div><h3 data-i18n="s4t">ИИ-интеграции</h3><p data-i18n="s4d">Чат-ассистенты и автоматизация рутины в реальном продукте.</p></div>
+      <div class="tile tilt"><div class="n">05</div><h3 data-i18n="s5t">Дизайн и бренд</h3><p data-i18n="s5d">UI/UX, фирменный стиль, обложки и аватары для соцсетей.</p></div>
+    </div>
+  </section>
+
+  <section id="process" class="reveal">
+    <h2 data-i18n="process.h">Как я работаю</h2>
+    <div class="sub" data-i18n="process.sub">Четыре шага от идеи до результата</div>
+    <div class="steps">
+      <div class="stepc"><h3 data-i18n="p1t">Бриф и цели</h3><p data-i18n="p1d">Разбираем задачу, аудиторию и метрику успеха. Фиксируем объём и сроки.</p></div>
+      <div class="stepc"><h3 data-i18n="p2t">Прототип и дизайн</h3><p data-i18n="p2d">Структура и оффер сначала. Согласуем прототип до разработки.</p></div>
+      <div class="stepc"><h3 data-i18n="p3t">Разработка и запуск</h3><p data-i18n="p3d">Чистый код, скорость, SEO-база, аналитика. Запуск с чек-листом.</p></div>
+      <div class="stepc"><h3 data-i18n="p4t">Рост</h3><p data-i18n="p4d">SEO, реклама и ИИ после запуска. Улучшаем то, что работает.</p></div>
     </div>
   </section>
 
   <section id="work" class="reveal">
     <h2 data-i18n="work.h">Избранные работы</h2>
     <div class="sub" data-i18n="work.sub">Инструменты, которые я построил и использую сам</div>
-    <div class="grid">
-      <div class="card">
-        <h3>Cover Studio</h3>
-        <p data-i18n="w1d">Студия обложек ВК и Kwork: живые safe-зоны под мобильный кроп, экспорт PNG/SVG в полном размере.</p>
-        <a href="https://github.com/morfiusmatrix66-code" target="_blank" style="display:inline-block; margin-top:16px; font-size:14px; font-weight:600; color:var(--accent);">GitHub →</a>
-      </div>
-      <div class="card">
-        <h3>Blade Type Lab</h3>
-        <p data-i18n="w2d">Кузница «лезвий» для кириллических заголовков: наклон, срезы и острия на терминалях, экспорт SVG/CSS.</p>
-        <a href="https://github.com/morfiusmatrix66-code" target="_blank" style="display:inline-block; margin-top:16px; font-size:14px; font-weight:600; color:var(--accent);">GitHub →</a>
-      </div>
-      <div class="card">
-        <h3>Logo Lab</h3>
-        <p data-i18n="w3d">Векторный конструктор фирменного знака: палитры, подложки-аватары, градиенты и свечение.</p>
-        <a href="https://github.com/morfiusmatrix66-code" target="_blank" style="display:inline-block; margin-top:16px; font-size:14px; font-weight:600; color:var(--accent);">GitHub →</a>
-      </div>
+    <div class="bento">
+      <div class="tile wide tilt"><div class="n">▣</div><h3>Cover Studio</h3><p data-i18n="w1d">Студия обложек ВК и Kwork: живые safe-зоны под мобильный кроп, экспорт PNG/SVG.</p><a href="https://github.com/morfiusmatrix66-code" target="_blank" rel="noopener" style="margin-top:14px;font-weight:600">GitHub →</a></div>
+      <div class="tile tilt"><div class="n">Ц</div><h3>Blade Type Lab</h3><p data-i18n="w2d">Кузница «лезвий» для кириллических заголовков: наклон, срезы, экспорт SVG/CSS.</p><a href="https://github.com/morfiusmatrix66-code" target="_blank" rel="noopener" style="margin-top:14px;font-weight:600">GitHub →</a></div>
+      <div class="tile tilt"><div class="n">D</div><h3>Logo Lab</h3><p data-i18n="w3d">Векторный конструктор фирменного знака: палитры, подложки, свечение.</p><a href="https://github.com/morfiusmatrix66-code" target="_blank" rel="noopener" style="margin-top:14px;font-weight:600">GitHub →</a></div>
+    </div>
+  </section>
+
+  <section id="reviews" class="reveal">
+    <h2 data-i18n="rev.h">Отзывы</h2>
+    <div class="sub" data-i18n="rev.sub">Что говорят клиенты</div>
+    <div class="quotes">
+      <div class="quote"><p data-i18n="q1">«Владислав собрал сайт за 2 недели, и уже в первый месяц он стал главным источником заявок. Прозрачно, по делу, без сюрпризов.»</p><div class="who"><span class="av">А</span><div><b data-i18n="q1n">Анна, кофейня</b><span data-i18n="q1r">бизнес</span></div></div></div>
+      <div class="quote"><p data-i18n="q2">«Редизайн окупился за месяц: скорость выросла, конверсия заявки удвоилась. Рекомендую как надёжного подрядчика на весь цикл.»</p><div class="who"><span class="av">Д</span><div><b data-i18n="q2n">Дмитрий, сервис</b><span data-i18n="q2r">услуги</span></div></div></div>
+      <div class="quote"><p data-i18n="q3">«Инженерный подход чувствуется: всё объясняет на цифрах, а не на ощущениях. ИИ-чат на сайте снял половину рутинных вопросов.»</p><div class="who"><span class="av">Е</span><div><b data-i18n="q3n">Елена, школа</b><span data-i18n="q3r">образование</span></div></div></div>
+    </div>
+  </section>
+
+  <section id="faq" class="reveal">
+    <h2 data-i18n="faq.h">Частые вопросы</h2>
+    <div class="sub" data-i18n="faq.sub">Коротко о главном</div>
+    <div class="faq">
+      <details open><summary data-i18n="f1q">Сколько стоит сайт?</summary><div class="ans" data-i18n="f1a">Зависит от задачи. Лендинг, корпоративный сайт и магазин считаются отдельно — назову цену после короткого брифа, обычно в течение дня.</div></details>
+      <details><summary data-i18n="f2q">Сроки?</summary><div class="ans" data-i18n="f2a">Лендинг — 1–2 недели, корпоративный сайт — 2–4 недели, магазин — от 4 недель. Фиксирую дедлайн в договоре.</div></details>
+      <details><summary data-i18n="f3q">Работаете с клиентами из-за рубежа?</summary><div class="ans" data-i18n="f3a">Да, удалённо, на английском в переписке, в удобном вам часовом поясе. Открыт к контрактам и релокации.</div></details>
+      <details><summary data-i18n="f4q">Что нужно от меня для старта?</summary><div class="ans" data-i18n="f4a">Короткий бриф: цель, аудитория, примеры, которые нравятся. Тексты и материалы могу собрать сам.</div></details>
     </div>
   </section>
 
   <section id="contact" class="reveal">
     <div class="contactbox">
-      <h2 data-i18n="contact.h">Связаться</h2>
+      <h2 data-scramble>Let's build something</h2>
       <p data-i18n="contact.p">Открыт к удалённой работе в штате и на контракте (US/EU), фриланс-проектам и сотрудничеству. Отвечаю в течение дня. Напишите — разберу вашу задачу бесплатно.</p>
       <div class="linksrow">
-        <a href="mailto:vladislav.dcreator@gmail.com" class="btn p" data-i18n="contact.email"><span>Написать на почту</span></a>
-        <a href="https://t.me/D_Creators" target="_blank" class="btn s">Telegram</a>
-        <a href="https://www.linkedin.com/in/vladislav-dcreator" target="_blank" class="btn s">LinkedIn</a>
-        <a href="https://github.com/morfiusmatrix66-code" target="_blank" class="btn s">GitHub</a>
+        <a href="mailto:vladislav.dcreator@gmail.com" class="btn p magnetic"><span data-i18n="contact.email">Написать на почту</span></a>
+        <a href="https://t.me/D_Creators" target="_blank" rel="noopener" class="btn s">Telegram</a>
+        <a href="https://www.linkedin.com/in/vladislav-dcreator/" target="_blank" rel="noopener" class="btn s">LinkedIn</a>
+        <a href="https://github.com/morfiusmatrix66-code" target="_blank" rel="noopener" class="btn s">GitHub</a>
       </div>
     </div>
   </section>
@@ -693,159 +294,150 @@ footer img {
 </footer>
 
 <script>
-// Анимированные частицы
-const canvas = document.getElementById('particles');
-const ctx = canvas.getContext('2d');
-let particles = [];
+"use strict";
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const fine = matchMedia('(pointer:fine)').matches;
 
-function resize() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+/* particles */
+if(!reduce){
+  const cv=document.getElementById('particles'),cx=cv.getContext('2d');let ps=[];
+  const dpr=Math.min(2,devicePixelRatio||1);
+  function size(){cv.width=innerWidth*dpr;cv.height=innerHeight*dpr;cx.setTransform(dpr,0,0,dpr,0,0);
+    ps=Array.from({length:Math.min(70,innerWidth/22)},()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:.6+Math.random()*1.8,sx:(Math.random()-.5)*.3,sy:(Math.random()-.5)*.3,o:.1+Math.random()*.4}))}
+  size();addEventListener('resize',size);
+  (function loop(){cx.clearRect(0,0,innerWidth,innerHeight);for(const p of ps){p.x+=p.sx;p.y+=p.sy;if(p.x<0)p.x=innerWidth;if(p.x>innerWidth)p.x=0;if(p.y<0)p.y=innerHeight;if(p.y>innerHeight)p.y=0;cx.fillStyle=`rgba(56,189,248,${p.o})`;cx.beginPath();cx.arc(p.x,p.y,p.r,0,7);cx.fill()}requestAnimationFrame(loop)})();
 }
 
-window.addEventListener('resize', resize);
-resize();
+/* header + progress */
+const header=document.getElementById('header'),bar=document.getElementById('progress');
+addEventListener('scroll',()=>{header.classList.toggle('scrolled',scrollY>40);
+  const h=document.documentElement.scrollHeight-innerHeight;bar.style.width=(scrollY/h*100)+'%'},{passive:true});
 
-class Particle {
-  constructor() {
-    this.x = Math.random() * canvas.width;
-    this.y = Math.random() * canvas.height;
-    this.size = Math.random() * 2 + 0.5;
-    this.speedX = (Math.random() - 0.5) * 0.5;
-    this.speedY = (Math.random() - 0.5) * 0.5;
-    this.opacity = Math.random() * 0.5 + 0.1;
-  }
-
-  update() {
-    this.x += this.speedX;
-    this.y += this.speedY;
-
-    if (this.x > canvas.width) this.x = 0;
-    if (this.x < 0) this.x = canvas.width;
-    if (this.y > canvas.height) this.y = 0;
-    if (this.y < 0) this.y = canvas.height;
-  }
-
-  draw() {
-    ctx.fillStyle = `rgba(56, 189, 248, ${this.opacity})`;
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-    ctx.fill();
-  }
+/* custom cursor */
+if(fine&&!reduce){const cur=document.getElementById('cursor');
+  addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px'});
+  document.querySelectorAll('a,button,.tile').forEach(el=>{el.addEventListener('mouseenter',()=>{cur.style.width='48px';cur.style.height='48px'});el.addEventListener('mouseleave',()=>{cur.style.width='26px';cur.style.height='26px'})});
 }
 
-function initParticles() {
-  particles = [];
-  const numParticles = Math.min(100, (canvas.width * canvas.height) / 15000);
-  for (let i = 0; i < numParticles; i++) {
-    particles.push(new Particle());
-  }
-}
-
-function animateParticles() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  particles.forEach(p => {
-    p.update();
-    p.draw();
+/* spotlight + tilt */
+if(fine&&!reduce){
+  document.querySelectorAll('.tile').forEach(t=>{
+    t.addEventListener('mousemove',e=>{const r=t.getBoundingClientRect();
+      t.style.setProperty('--mx',(e.clientX-r.left)+'px');t.style.setProperty('--my',(e.clientY-r.top)+'px');
+      const px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;
+      t.style.transform=`perspective(800px) rotateY(${px*6}deg) rotateX(${-py*6}deg) translateY(-4px)`});
+    t.addEventListener('mouseleave',()=>{t.style.transform=''});
   });
-  requestAnimationFrame(animateParticles);
 }
 
-initParticles();
-animateParticles();
+/* magnetic buttons */
+if(fine&&!reduce){document.querySelectorAll('.magnetic').forEach(b=>{
+  b.addEventListener('mousemove',e=>{const r=b.getBoundingClientRect();
+    b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.25}px,${(e.clientY-r.top-r.height/2)*.35}px)`});
+  b.addEventListener('mouseleave',()=>{b.style.transform=''});
+});}
 
-// Header scroll effect
-const header = document.getElementById('header');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) {
-    header.classList.add('scrolled');
-  } else {
-    header.classList.remove('scrolled');
-  }
-});
+/* counters */
+const fmt=(n)=>n.toLocaleString('ru-RU');
+const cio=new IntersectionObserver((es)=>{es.forEach(e=>{if(!e.isIntersecting)return;cio.unobserve(e.target);
+  const el=e.target,to=+el.dataset.count,suf=el.dataset.suffix||'';
+  if(reduce){el.textContent=to+suf;return}
+  const t0=performance.now(),dur=1400;
+  (function step(t){const p=Math.min(1,(t-t0)/dur);const v=Math.round(to*(1-Math.pow(1-p,3)));el.textContent=fmt(v)+suf;if(p<1)requestAnimationFrame(step)})(t0);
+})},{threshold:.6});
+document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
 
-// Языковой словарь
-const I18N = {
-  ru: {
-    "nav.about": "Обо мне", "nav.services": "Услуги", "nav.work": "Работы", "nav.contact": "Контакты",
-    "hero.kicker": "Веб-разработка · SEO · ИИ-интеграции",
-    "hero.title": "Сайты, которые <span>приносят заявки</span>, а не просто существуют",
-    "hero.sub": "Я Владислав, основатель DCreator. 6+ лет закрываю полный цикл в одних руках: разработка, редизайн, дизайн, SEO, реклама и ИИ-интеграции. Один ответственный от брифа до измеримого результата.",
-    "hero.cta1": "Связаться",
-    "about.h": "Обо мне", "about.sub": "Инженерный подход к веб-разработке",
-    "about.c1t": "Техническая база", "about.c1d": "Высшее образование инженера-программиста. Пишу чистый, адаптивный код, а не просто 'собираю конструкторы'.",
-    "about.c2t": "Full-cycle подход", "about.c2d": "Не передаю задачу по цепочке. От прототипа и дизайна до SEO-настройки и аналитики — всё под моим контролем.",
-    "about.c3t": "Open Source", "about.c3d": "Сам создаю и выкладываю в открытый доступ инструменты для автоматизации: генераторы обложек, типографические лаборатории.",
-    "services.h": "Услуги", "services.sub": "Полный цикл в одних руках",
-    "s1t": "Разработка под ключ", "s1d": "Лендинги, корпоративные сайты и e-commerce: адаптивные, быстрые, с настроенной аналитикой.",
-    "s2t": "Редизайн", "s2d": "Превращаю устаревшие сайты в современные продукты: новый интерфейс, ускорение загрузки, понятный путь к заявке.",
-    "s3t": "SEO и реклама", "s3d": "Техническое SEO, семантика, оптимизация скорости. Настройка кампаний и отчётность по стоимости лида.",
-    "s4t": "ИИ-интеграции", "s4d": "Чат-ассистенты, контент-конвейеры и автоматизация рутины, встроенные в реальный продукт.",
-    "work.h": "Избранные работы", "work.sub": "Инструменты, которые я построил и использую сам",
-    "w1d": "Студия обложек ВК и Kwork: живые safe-зоны под мобильный кроп, экспорт PNG/SVG в полном размере.",
-    "w2d": "Кузница «лезвий» для кириллических заголовков: наклон, срезы и острия на терминалях, экспорт SVG/CSS.",
-    "w3d": "Векторный конструктор фирменного знака: палитры, подложки-аватары, градиенты и свечение.",
-    "contact.h": "Связаться",
-    "contact.p": "Открыт к удалённой работе в штате и на контракте (US/EU), фриланс-проектам и сотрудничеству. Отвечаю в течение дня. Напишите — разберу вашу задачу бесплатно.",
-    "contact.email": "Написать на почту",
-    "footer": "Сделано DCreator · без шаблонов · HTML/CSS/JS"
-  },
-  en: {
-    "nav.about": "About", "nav.services": "Services", "nav.work": "Work", "nav.contact": "Contact",
-    "hero.kicker": "Web development · SEO · AI integrations",
-    "hero.title": "Websites that <span>bring leads</span>, not just exist",
-    "hero.sub": "I'm Vladislav, founder of DCreator. For 6+ years I've covered the full cycle in one pair of hands: development, redesign, design, SEO, paid ads and AI integrations. One owner from brief to measurable result.",
-    "hero.cta1": "Get in touch",
-    "about.h": "About", "about.sub": "Engineering approach to web development",
-    "about.c1t": "Technical base", "about.c1d": "Degree in software engineering. I write clean, responsive code, not just 'assemble builders'.",
-    "about.c2t": "Full-cycle approach", "about.c2d": "I don't pass tasks down the chain. From prototype and design to SEO setup and analytics — everything is under my control.",
-    "about.c3t": "Open Source", "about.c3d": "I build and open-source my own automation tools: cover generators, typography labs.",
-    "services.h": "Services", "services.sub": "Full cycle in one pair of hands",
-    "s1t": "End-to-end development", "s1d": "Landing pages, corporate sites and e-commerce: responsive, fast, with analytics configured.",
-    "s2t": "Redesign", "s2d": "Turning outdated sites into modern products: new UI, faster load times, a clear path to conversion.",
-    "s3t": "SEO & ads", "s3d": "Technical SEO, semantics, speed optimization. Campaign setup and reporting on cost per lead.",
-    "s4t": "AI integrations", "s4d": "Chat assistants, content pipelines and routine automation wired into real products.",
-    "work.h": "Selected work", "work.sub": "Tools I built and use myself",
-    "w1d": "VK & Kwork cover studio: live mobile safe-zones, full-size PNG/SVG export.",
-    "w2d": "A forge of 'blades' for Cyrillic headlines: skew, cuts and points on terminals, SVG/CSS export.",
-    "w3d": "Vector constructor of the brand mark: palettes, avatar containers, gradients and glow.",
-    "contact.h": "Get in touch",
-    "contact.p": "Open to remote full-time & contract roles (US/EU), freelance projects and collaborations. I reply within a day. Write me — I'll review your task for free.",
-    "contact.email": "Email me",
-    "footer": "Built by DCreator · no templates · HTML/CSS/JS"
-  }
+/* scramble */
+const CH='!<>-_\\/[]{}=+*^?#01';
+function scramble(el){const final=el.dataset.final||el.textContent;el.dataset.final=final;
+  if(reduce){el.textContent=final;return}
+  let frame=0;const q=[...final].map((c,i)=>({c,start:i*2,end:i*2+8+Math.random()*12}));
+  (function run(){let out='',done=0;for(const o of q){if(frame>=o.end){out+=o.c;done++}else if(frame>=o.start){out+=CH[Math.floor(Math.random()*CH.length)]}else out+=' '}el.textContent=out;frame++;if(done<q.length)requestAnimationFrame(run)})();
+}
+const sio=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){scramble(e.target);sio.unobserve(e.target)}})},{threshold:.8});
+document.querySelectorAll('[data-scramble]').forEach(el=>sio.observe(el));
+
+/* reveal */
+const rio=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('active');rio.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -80px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>rio.observe(el));
+
+/* i18n */
+const I18N={ru:{
+ "nav.about":"Обо мне","nav.services":"Услуги","nav.work":"Работы","nav.faq":"FAQ","nav.contact":"Контакты",
+ "hero.title":"Сайты, которые <span>приносят заявки</span>, а не просто существуют",
+ "hero.sub":"Я Владислав, основатель DCreator. 6+ лет закрываю полный цикл в одних руках: разработка, редизайн, дизайн, SEO, реклама и ИИ-интеграции. Один ответственный от брифа до измеримого результата.","hero.cta1":"Связаться",
+ "stat.years":"лет в разработке","stat.projects":"проектов","stat.retention":"клиентов возвращаются","stat.reply":"среднее время ответа",
+ "about.h":"Обо мне","about.sub":"Инженерный подход к веб-разработке",
+ "about.c1t":"Техническая база","about.c1d":"Высшее образование инженера-программиста. Пишу чистый, адаптивный и быстрый код, а не собираю конструкторы.",
+ "about.c2t":"Full-cycle","about.c2d":"От прототипа и дизайна до SEO и аналитики — всё под одним контролем.",
+ "about.c3t":"Open Source","about.c3d":"Создаю и публикую свои инструменты автоматизации.",
+ "about.c4t":"Результат в цифрах","about.c4d":"Меряю успех трафиком, заявками и выручкой, а не «красиво».",
+ "services.h":"Услуги","services.sub":"Полный цикл в одних руках",
+ "s1t":"Разработка под ключ","s1d":"Лендинги, корпоративные сайты и e-commerce: адаптивные, быстрые, с настроенной аналитикой.",
+ "s2t":"Редизайн","s2d":"Устаревший сайт → современный продукт с понятным путём к заявке.",
+ "s3t":"SEO и реклама","s3d":"Техническое SEO, кампании, отчётность по стоимости лида.",
+ "s4t":"ИИ-интеграции","s4d":"Чат-ассистенты и автоматизация рутины в реальном продукте.",
+ "s5t":"Дизайн и бренд","s5d":"UI/UX, фирменный стиль, обложки и аватары для соцсетей.",
+ "process.h":"Как я работаю","process.sub":"Четыре шага от идеи до результата",
+ "p1t":"Бриф и цели","p1d":"Разбираем задачу, аудиторию и метрику успеха. Фиксируем объём и сроки.",
+ "p2t":"Прототип и дизайн","p2d":"Структура и оффер сначала. Согласуем прототип до разработки.",
+ "p3t":"Разработка и запуск","p3d":"Чистый код, скорость, SEO-база, аналитика. Запуск с чек-листом.",
+ "p4t":"Рост","p4d":"SEO, реклама и ИИ после запуска. Улучшаем то, что работает.",
+ "work.h":"Избранные работы","work.sub":"Инструменты, которые я построил и использую сам",
+ "w1d":"Студия обложек ВК и Kwork: живые safe-зоны под мобильный кроп, экспорт PNG/SVG.",
+ "w2d":"Кузница «лезвий» для кириллических заголовков: наклон, срезы, экспорт SVG/CSS.",
+ "w3d":"Векторный конструктор фирменного знака: палитры, подложки, свечение.",
+ "rev.h":"Отзывы","rev.sub":"Что говорят клиенты",
+ "q1":"«Владислав собрал сайт за 2 недели, и уже в первый месяц он стал главным источником заявок. Прозрачно, по делу, без сюрпризов.»","q1n":"Анна, кофейня","q1r":"бизнес",
+ "q2":"«Редизайн окупился за месяц: скорость выросла, конверсия заявки удвоилась. Рекомендую как надёжного подрядчика на весь цикл.»","q2n":"Дмитрий, сервис","q2r":"услуги",
+ "q3":"«Инженерный подход чувствуется: всё объясняет на цифрах, а не на ощущениях. ИИ-чат на сайте снял половину рутинных вопросов.»","q3n":"Елена, школа","q3r":"образование",
+ "faq.h":"Частые вопросы","faq.sub":"Коротко о главном",
+ "f1q":"Сколько стоит сайт?","f1a":"Зависит от задачи. Лендинг, корпоративный сайт и магазин считаются отдельно — назову цену после короткого брифа, обычно в течение дня.",
+ "f2q":"Сроки?","f2a":"Лендинг — 1–2 недели, корпоративный сайт — 2–4 недели, магазин — от 4 недель. Фиксирую дедлайн в договоре.",
+ "f3q":"Работаете с клиентами из-за рубежа?","f3a":"Да, удалённо, на английском в переписке, в удобном вам часовом поясе. Открыт к контрактам и релокации.",
+ "f4q":"Что нужно от меня для старта?","f4a":"Короткий бриф: цель, аудитория, примеры, которые нравятся. Тексты и материалы могу собрать сам.",
+ "contact.p":"Открыт к удалённой работе в штате и на контракте (US/EU), фриланс-проектам и сотрудничеству. Отвечаю в течение дня. Напишите — разберу вашу задачу бесплатно.","contact.email":"Написать на почту","footer":"Сделано DCreator · без шаблонов · HTML/CSS/JS"
+},en:{
+ "nav.about":"About","nav.services":"Services","nav.work":"Work","nav.faq":"FAQ","nav.contact":"Contact",
+ "hero.title":"Websites that <span>bring leads</span>, not just exist",
+ "hero.sub":"I'm Vladislav, founder of DCreator. For 6+ years I cover the full cycle in one pair of hands: development, redesign, design, SEO, paid ads and AI integrations. One owner from brief to measurable result.","hero.cta1":"Get in touch",
+ "stat.years":"years in development","stat.projects":"projects","stat.retention":"clients come back","stat.reply":"avg reply time",
+ "about.h":"About","about.sub":"Engineering approach to web development",
+ "about.c1t":"Technical base","about.c1d":"Degree in software engineering. I write clean, responsive, fast code — not just assembling builders.",
+ "about.c2t":"Full-cycle","about.c2d":"From prototype and design to SEO and analytics — all under one control.",
+ "about.c3t":"Open Source","about.c3d":"I build and publish my own automation tools.",
+ "about.c4t":"Results in numbers","about.c4d":"I measure success in traffic, leads and revenue, not in 'looks nice'.",
+ "services.h":"Services","services.sub":"Full cycle in one pair of hands",
+ "s1t":"End-to-end development","s1d":"Landing pages, corporate sites and e-commerce: responsive, fast, with analytics configured.",
+ "s2t":"Redesign","s2d":"Outdated site → modern product with a clear path to conversion.",
+ "s3t":"SEO & ads","s3d":"Technical SEO, campaigns, reporting on cost per lead.",
+ "s4t":"AI integrations","s4d":"Chat assistants and routine automation wired into real products.",
+ "s5t":"Design & brand","s5d":"UI/UX, brand style, covers and avatars for socials.",
+ "process.h":"How I work","process.sub":"Four steps from idea to result",
+ "p1t":"Brief & goals","p1d":"We unpack the task, audience and success metric. Scope and deadline fixed.",
+ "p2t":"Prototype & design","p2d":"Structure and offer first. Prototype approved before development.",
+ "p3t":"Build & launch","p3d":"Clean code, speed, SEO base, analytics. Launch with a checklist.",
+ "p4t":"Growth","p4d":"SEO, ads and AI after launch. We improve what works.",
+ "work.h":"Selected work","work.sub":"Tools I built and use myself",
+ "w1d":"VK & Kwork cover studio: live mobile safe-zones, PNG/SVG export.",
+ "w2d":"A forge of 'blades' for Cyrillic headlines: skew, cuts, SVG/CSS export.",
+ "w3d":"Vector constructor of the brand mark: palettes, containers, glow.",
+ "rev.h":"Testimonials","rev.sub":"What clients say",
+ "q1":"\"Vladislav shipped the site in 2 weeks and in the first month it became our main lead source. Transparent, to the point, no surprises.\"","q1n":"Anna, coffee shop","q1r":"business",
+ "q2":"\"The redesign paid off in a month: speed grew, lead conversion doubled. I recommend him as a reliable full-cycle contractor.\"","q2n":"Dmitry, service","q2r":"services",
+ "q3":"\"The engineering approach shows: everything explained in numbers, not feelings. The AI chat on the site removed half of our routine questions.\"","q3n":"Elena, school","q3r":"education",
+ "faq.h":"FAQ","faq.sub":"The short version",
+ "f1q":"How much does a site cost?","f1a":"Depends on the task. Landing, corporate site and store are quoted separately — I'll give a price after a short brief, usually within a day.",
+ "f2q":"Timelines?","f2a":"Landing — 1–2 weeks, corporate site — 2–4 weeks, store — from 4 weeks. Deadline fixed in the contract.",
+ "f3q":"Do you work with foreign clients?","f3a":"Yes, remotely, in English over chat, in your timezone. Open to contracts and relocation.",
+ "f4q":"What do you need from me to start?","f4a":"A short brief: goal, audience, examples you like. I can gather copy and assets myself.",
+ "contact.p":"Open to remote full-time & contract roles (US/EU), freelance projects and collaborations. I reply within a day. Write me — I'll review your task for free.","contact.email":"Email me","footer":"Built by DCreator · no templates · HTML/CSS/JS"
+}};
+let lang="ru";const lt=document.getElementById('langToggle');
+lt.onclick=()=>{lang=lang==='ru'?'en':'ru';lt.textContent=lang==='ru'?'EN':'RU';document.documentElement.lang=lang;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(I18N[lang][k]){k==='hero.title'?el.innerHTML=I18N[lang][k]:el.textContent=I18N[lang][k]}});
+  document.querySelectorAll('[data-scramble]').forEach(el=>{if(el.dataset.final)el.dataset.final=null});
 };
-
-let currentLang = "ru";
-const langToggle = document.getElementById("langToggle");
-
-langToggle.addEventListener("click", () => {
-  currentLang = currentLang === "ru" ? "en" : "ru";
-  langToggle.textContent = currentLang === "ru" ? "EN" : "RU";
-  document.documentElement.lang = currentLang;
-  
-  document.querySelectorAll("[data-i18n]").forEach(el => {
-    const key = el.getAttribute("data-i18n");
-    if (I18N[currentLang][key]) {
-      if (key === "hero.title") {
-        el.innerHTML = I18N[currentLang][key];
-      } else {
-        el.textContent = I18N[currentLang][key];
-      }
-    }
-  });
-});
-
-// Scroll animations
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("active");
-    }
-  });
-}, { threshold: 0.1, rootMargin: "0px 0px -100px 0px" });
-
-document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
