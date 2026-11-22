@@ -3,562 +3,849 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Владислав · DCreator — сайты, которые продают</title>
-<meta name="description" content="Веб-разработчик 6+ лет: разработка, редизайн, SEO, ИИ-интеграции. Сайты, которые приносят заявки, а не просто существуют.">
+<title>Владислав · DCreator — сайты под ключ, SEO, ИИ-интеграции</title>
+<meta name="description" content="Веб-разработчик с 6+ годами опыта: разработка, редизайн, SEO, реклама и ИИ-интеграции.">
 <meta property="og:title" content="Владислав · DCreator">
-<meta property="og:description" content="Full-cycle web developer: build, redesign, SEO, AI integrations.">
+<meta property="og:description" content="Full-cycle web developer: build, redesign, SEO, ads, AI integrations.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://morfiusmatrix66-code.github.io/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' fill='%23050B1A'/%3E%3Cpath d='M40 22 L62 22 C84 22 96 40 96 60 C96 80 84 98 62 98 L40 98 Z' fill='none' stroke='%23E8EEF7' stroke-width='16'/%3E%3Cpath d='M20 78 L46 78 L40 92 L82 52 L60 52 L66 38 L30 38 L36 52 L20 52 Z' fill='%2300E0FF'/%3E%3C/svg%3E">
+<meta property="og:image" content="https://morfiusmatrix66-code.github.io/logo.png">
+<link rel="icon" type="image/png" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#050B1A;--bg2:#0A1428;--surface:#0B1630;--surface2:#102040;--overlay:#152A52;
-  --blue:#0B5CFF;--cyan:#00E0FF;--sky:#9FD8FF;--white:#F2F6FC;--silver:#C9D6E8;--muted:#7E93B5;
-  --line:rgba(0,224,255,.14);--glow:rgba(0,224,255,.5);
-  --fd:"Montserrat",system-ui,sans-serif;--fb:"Inter",system-ui,sans-serif;
+:root {
+  --bg: #030712;
+  --surface: rgba(15, 23, 42, 0.6);
+  --surface-hover: rgba(30, 41, 59, 0.8);
+  --border: rgba(148, 163, 184, 0.1);
+  --border-hover: rgba(56, 189, 248, 0.3);
+  --text: #f8fafc;
+  --text-muted: #94a3b8;
+  --accent: #38bdf8;
+  --accent2: #818cf8;
+  --accent3: #c084fc;
+  --glow: rgba(56, 189, 248, 0.15);
+  --fd: "Montserrat", system-ui, sans-serif;
+  --fb: "Inter", system-ui, sans-serif;
 }
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--white);font-family:var(--fb);overflow-x:hidden;line-height:1.6;-webkit-font-smoothing:antialiased}
-body::before{content:"";position:fixed;inset:0;z-index:-2;background:
-  radial-gradient(1000px 560px at 8% -12%,rgba(11,92,255,.22),transparent 60%),
-  radial-gradient(820px 520px at 96% 2%,rgba(0,224,255,.13),transparent 60%),
-  radial-gradient(760px 700px at 50% 118%,rgba(11,92,255,.16),transparent 62%),
-  linear-gradient(180deg,var(--bg),var(--bg2))}
-#fx{position:fixed;inset:0;z-index:-1;pointer-events:none}
-#cursor{position:fixed;top:0;left:0;width:26px;height:26px;border-radius:50%;pointer-events:none;z-index:9999;
-  background:radial-gradient(circle,rgba(0,224,255,.5),transparent 70%);mix-blend-mode:screen;
-  transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s;display:none}
-a{color:var(--cyan);text-decoration:none;transition:.2s}
-a:hover{color:var(--white)}
-:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
-.mono{font-family:ui-monospace,monospace}
 
-/* HEADER */
-header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(5,11,26,.82);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
-.nav{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:16px;padding:13px 22px}
-.logo{font-family:var(--fd);font-weight:900;font-size:19px;color:var(--white);display:flex;align-items:center;gap:9px;letter-spacing:.3px}
-.logo svg{width:34px;height:34px;flex:none}
-.logo b{background:linear-gradient(90deg,#fff,var(--sky));-webkit-background-clip:text;background-clip:text;color:transparent}
-.nav-links{display:flex;gap:22px;align-items:center;margin-left:auto}
-.nav-links a{color:var(--silver);font-size:14px;font-weight:500;position:relative}
-.nav-links a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:2px;background:var(--cyan);transition:.25s}
-.nav-links a:hover{color:var(--white)}
-.nav-links a:hover::after{width:100%}
-.lang-btn{background:var(--surface2);border:1px solid var(--line);color:var(--white);font-weight:700;font-size:12px;border-radius:8px;padding:6px 11px;cursor:pointer;transition:.2s}
-.lang-btn:hover{border-color:var(--cyan)}
-.nav-cta{background:linear-gradient(90deg,var(--blue),var(--cyan));color:#03122A;font-weight:700;font-size:13px;border:none;border-radius:9px;padding:8px 15px;cursor:pointer;transition:.2s}
-.nav-cta:hover{box-shadow:0 6px 20px rgba(0,224,255,.35);transform:translateY(-1px)}
-.burger{display:none;margin-left:auto;background:var(--surface2);border:1px solid var(--line);color:var(--white);border-radius:9px;padding:8px 11px;cursor:pointer;font-size:16px}
-
-/* HERO */
-main{max-width:1200px;margin:0 auto;padding:0 22px}
-.hero{padding:140px 0 40px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
-.kicker{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--cyan);font-weight:700;margin-bottom:18px;display:inline-flex;align-items:center;gap:8px}
-.kicker::before{content:"";width:26px;height:1px;background:var(--cyan)}
-h1{font-family:var(--fd);font-weight:900;font-size:clamp(34px,5.2vw,60px);line-height:1.05;letter-spacing:-1px;margin-bottom:20px}
-h1 .grad{background:linear-gradient(100deg,var(--blue),var(--cyan) 60%,#fff);-webkit-background-clip:text;background-clip:text;color:transparent}
-#typed{color:var(--cyan);font-family:var(--fd);font-weight:800}
-.caret{display:inline-block;width:3px;height:1em;background:var(--cyan);vertical-align:-2px;animation:blink 1s steps(2) infinite}
-@keyframes blink{50%{opacity:0}}
-.hero p{color:var(--silver);font-size:16.5px;max-width:560px;margin-bottom:28px}
-.cta{display:flex;gap:14px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:15px;border-radius:12px;padding:14px 24px;transition:transform .15s,box-shadow .2s,border-color .2s;border:none;cursor:pointer;will-change:transform}
-.btn.p{background:linear-gradient(90deg,var(--blue),var(--cyan));color:#03122A}
-.btn.p:hover{box-shadow:0 10px 30px rgba(0,224,255,.4)}
-.btn.s{background:rgba(16,32,64,.6);border:1px solid var(--line);color:var(--white)}
-.btn.s:hover{border-color:var(--cyan)}
-
-/* hero art */
-.hero-art{position:relative;display:grid;place-items:center;min-height:320px}
-.hero-art svg{width:min(340px,80%);height:auto;overflow:visible}
-.orbit{position:absolute;border:1px dashed rgba(0,224,255,.18);border-radius:50%;animation:spin 26s linear infinite}
-.orbit.o1{width:300px;height:300px}
-.orbit.o2{width:420px;height:420px;animation-duration:40s;animation-direction:reverse;border-color:rgba(11,92,255,.16)}
-@keyframes spin{to{transform:rotate(360deg)}}
-.spark{position:absolute;width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--glow)}
-.spark.s1{top:18%;left:20%}.spark.s2{bottom:24%;right:18%;background:var(--blue)}.spark.s3{top:60%;left:8%;width:4px;height:4px}
-
-/* facts */
-.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:48px 0 0}
-.fact{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 16px;text-align:center}
-.fact b{font-family:var(--fd);font-weight:900;font-size:clamp(24px,3vw,34px);display:block;background:linear-gradient(90deg,var(--cyan),#fff);-webkit-background-clip:text;background-clip:text;color:transparent;font-variant-numeric:tabular-nums}
-.fact span{font-size:12px;color:var(--muted)}
-
-/* section */
-section{padding:80px 0 8px}
-.sec-head{max-width:640px;margin-bottom:34px}
-.sec-head h2{font-family:var(--fd);font-weight:900;font-size:clamp(26px,4vw,40px);letter-spacing:-.5px;margin-bottom:10px}
-.sec-head p{color:var(--silver);font-size:15.5px}
-.eyebrow{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--cyan);font-weight:700;margin-bottom:12px}
-
-/* why cards */
-.why{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.wcard{background:linear-gradient(160deg,var(--surface),var(--surface2));border:1px solid var(--line);border-radius:18px;padding:26px;transform-style:preserve-3d;transition:transform .12s ease-out,box-shadow .3s,border-color .3s;position:relative;overflow:hidden}
-.wcard::after{content:"";position:absolute;inset:0;background:radial-gradient(200px 120px at var(--mx,50%) var(--my,0%),rgba(0,224,255,.14),transparent 70%);opacity:0;transition:.3s}
-.wcard:hover{box-shadow:0 24px 60px rgba(0,0,0,.5);border-color:rgba(0,224,255,.4)}
-.wcard:hover::after{opacity:1}
-.wcard .ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:rgba(0,224,255,.1);border:1px solid var(--line);margin-bottom:16px}
-.wcard .ic svg{width:24px;height:24px;stroke:var(--cyan);fill:none;stroke-width:2}
-.wcard h3{font-family:var(--fd);font-size:18px;margin-bottom:8px}
-.wcard p{color:var(--silver);font-size:14px}
-
-/* tabs */
-.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
-.tab{background:var(--surface);border:1px solid var(--line);color:var(--silver);font-weight:600;font-size:13.5px;border-radius:10px;padding:10px 16px;cursor:pointer;transition:.2s}
-.tab:hover{border-color:var(--cyan);color:var(--white)}
-.tab.on{background:linear-gradient(90deg,var(--blue),var(--cyan));color:#03122A;border-color:transparent;font-weight:700}
-.tabpanel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px;display:none;animation:fade .4s ease}
-.tabpanel.on{display:grid;grid-template-columns:1.4fr 1fr;gap:26px;align-items:center}
-@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-.tabpanel h3{font-family:var(--fd);font-size:22px;margin-bottom:12px}
-.tabpanel p{color:var(--silver);font-size:14.5px;margin-bottom:16px}
-.chips{display:flex;gap:8px;flex-wrap:wrap}
-.chip{font-size:11.5px;font-weight:600;color:var(--sky);background:var(--bg2);border:1px solid var(--line);border-radius:99px;padding:5px 11px}
-.tabviz{display:grid;place-items:center;min-height:160px;border-radius:14px;background:radial-gradient(120px 120px at 50% 40%,rgba(11,92,255,.2),transparent),var(--bg2);border:1px solid var(--line)}
-.tabviz svg{width:90px;height:90px;stroke:var(--cyan);fill:none;stroke-width:1.6}
-
-/* cases */
-.cases{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.case{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px;transition:.3s}
-.case:hover{border-color:rgba(0,224,255,.4);transform:translateY(-3px)}
-.case .tag{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--cyan);margin-bottom:12px;display:inline-block}
-.case h3{font-family:var(--fd);font-size:19px;margin-bottom:14px}
-.ba{display:flex;align-items:center;gap:14px;margin:14px 0}
-.ba .box{flex:1;border-radius:12px;padding:14px;text-align:center}
-.ba .before{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.3)}
-.ba .after{background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.35)}
-.ba .box b{font-family:var(--fd);font-size:20px;display:block}
-.ba .before b{color:#FFB4B4}.ba .after b{color:#B9F6CA}
-.ba .box span{font-size:11px;color:var(--muted)}
-.ba .arr{color:var(--cyan);font-size:20px;flex:none}
-.case p{color:var(--silver);font-size:13.5px}
-
-/* tools */
-.tools{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.tool{background:linear-gradient(160deg,var(--surface),var(--surface2));border:1px solid var(--line);border-radius:16px;padding:22px;transition:.25s}
-.tool:hover{border-color:var(--cyan);transform:translateY(-3px);box-shadow:0 18px 40px rgba(0,0,0,.4)}
-.tool .code{font-family:ui-monospace,monospace;font-size:12px;color:var(--cyan);margin-bottom:10px}
-.tool h3{font-family:var(--fd);font-size:17px;margin-bottom:8px}
-.tool p{color:var(--silver);font-size:13px;margin-bottom:14px}
-.tool a{font-size:13px;font-weight:700}
-
-/* process */
-.proc{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;position:relative}
-.proc::before{content:"";position:absolute;top:22px;left:6%;right:6%;height:2px;background:linear-gradient(90deg,transparent,var(--line),var(--cyan),var(--line),transparent);z-index:0}
-.pstep{position:relative;z-index:1;text-align:center}
-.pstep .dot{width:44px;height:44px;border-radius:50%;margin:0 auto 14px;display:grid;place-items:center;background:var(--surface2);border:1px solid var(--cyan);font-family:var(--fd);font-weight:900;color:var(--cyan)}
-.pstep h3{font-family:var(--fd);font-size:15px;margin-bottom:6px}
-.pstep p{color:var(--muted);font-size:12.5px}
-
-/* final cta */
-.final{background:linear-gradient(135deg,var(--surface),var(--surface2));border:1px solid var(--line);border-radius:24px;padding:46px 28px;text-align:center;position:relative;overflow:hidden}
-.final::before{content:"";position:absolute;inset:-40%;background:radial-gradient(400px 300px at 30% 20%,rgba(0,224,255,.16),transparent),radial-gradient(400px 300px at 80% 80%,rgba(11,92,255,.16),transparent);animation:drift 14s ease-in-out infinite alternate}
-@keyframes drift{to{transform:translate(20px,-16px)}}
-.final h2{font-family:var(--fd);font-size:clamp(24px,3.6vw,38px);margin-bottom:12px;position:relative}
-.final p{color:var(--silver);max-width:560px;margin:0 auto 26px;position:relative}
-.final .cta{justify-content:center;position:relative}
-.final .note{font-size:12px;color:var(--muted);margin-top:16px;position:relative}
-
-/* footer */
-footer{border-top:1px solid var(--line);margin-top:70px;padding:30px 22px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;max-width:1200px;margin-left:auto;margin-right:auto}
-footer .flogo{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-weight:800;color:var(--white)}
-footer .flogo svg{width:26px;height:26px}
-footer .flinks{display:flex;gap:16px;flex-wrap:wrap}
-footer .flinks a{color:var(--silver);font-size:13px}
-footer .flinks a:hover{color:var(--cyan)}
-footer .copy{color:var(--muted);font-size:12px}
-
-/* reveal */
-.reveal{opacity:0;transform:translateY(26px);transition:.7s cubic-bezier(.2,.8,.2,1)}
-.reveal.in{opacity:1;transform:none}
-
-/* mobile */
-@media(max-width:920px){
-  .hero{grid-template-columns:1fr;padding-top:120px}
-  .hero-art{order:-1;min-height:240px}
-  .facts{grid-template-columns:repeat(2,1fr)}
-  .why,.tools{grid-template-columns:1fr}
-  .cases{grid-template-columns:1fr}
-  .tabpanel.on{grid-template-columns:1fr}
-  .proc{grid-template-columns:repeat(2,1fr)}
-  .proc::before{display:none}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { 
+  background: var(--bg); 
+  color: var(--text); 
+  font-family: var(--fb); 
+  overflow-x: hidden; 
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
 }
-@media(max-width:768px){
-  .nav-links{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:rgba(5,11,26,.97);padding:18px 22px;gap:14px;border-bottom:1px solid var(--line)}
-  .nav-links.open{display:flex}
-  .burger{display:block}
-  .nav-cta{display:none}
+
+/* Анимированный mesh-градиент фон */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(56, 189, 248, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(129, 140, 248, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(192, 132, 252, 0.08) 0%, transparent 60%);
+  animation: meshMove 20s ease-in-out infinite;
 }
-@media(prefers-reduced-motion:reduce){
-  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
-  html{scroll-behavior:auto}
+
+@keyframes meshMove {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -30px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.95); }
+}
+
+/* Canvas для частиц */
+#particles {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Header с glassmorphism */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: rgba(3, 7, 18, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+header.scrolled {
+  background: rgba(3, 7, 18, 0.9);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--fd);
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 10px;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(56, 189, 248, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.logo:hover .logo-icon {
+  transform: rotate(-10deg) scale(1.1);
+}
+
+.logo-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--text);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.lang-btn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-weight: 600;
+  font-size: 12px;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  backdrop-filter: blur(10px);
+}
+
+.lang-btn:hover {
+  border-color: var(--accent);
+  background: var(--surface-hover);
+  transform: translateY(-2px);
+}
+
+/* Layout */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section {
+  padding: 100px 0;
+}
+
+h2 {
+  font-family: var(--fd);
+  font-weight: 800;
+  font-size: clamp(32px, 5vw, 48px);
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sub {
+  color: var(--text-muted);
+  font-size: 16px;
+  margin-bottom: 48px;
+  max-width: 600px;
+}
+
+/* Hero */
+.hero {
+  padding-top: 160px;
+  padding-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-logo-wrap {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.hero-logo-wrap::before {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+.hero-logo-wrap img {
+  width: 160px;
+  height: auto;
+  display: block;
+  background: white;
+  padding: 20px;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(56, 189, 248, 0.3);
+  position: relative;
+  z-index: 1;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.kicker {
+  font-size: 14px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards 0.2s;
+}
+
+h1 {
+  font-family: var(--fd);
+  font-weight: 900;
+  font-size: clamp(40px, 7vw, 72px);
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards 0.4s;
+}
+
+h1 span {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 50%, var(--accent3) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradientShift 5s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.hero p {
+  color: var(--text-muted);
+  font-size: 18px;
+  max-width: 680px;
+  margin-bottom: 40px;
+  line-height: 1.7;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards 0.6s;
+}
+
+.cta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards 0.8s;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 12px;
+  padding: 16px 32px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn.p {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: white;
+  box-shadow: 0 8px 30px rgba(56, 189, 248, 0.4);
+}
+
+.btn.p::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--accent2), var(--accent3));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.btn.p:hover::before {
+  opacity: 1;
+}
+
+.btn.p:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(56, 189, 248, 0.5);
+}
+
+.btn.p span {
+  position: relative;
+  z-index: 1;
+}
+
+.btn.s {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  backdrop-filter: blur(10px);
+}
+
+.btn.s:hover {
+  border-color: var(--accent);
+  background: var(--surface-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(56, 189, 248, 0.2);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Grids */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 32px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent3));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: var(--border-hover);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  background: var(--surface-hover);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card h3 {
+  font-family: var(--fd);
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.card p {
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.card .n {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  font-family: var(--fd);
+  font-weight: 900;
+  font-size: 48px;
+  color: rgba(56, 189, 248, 0.1);
+  line-height: 1;
+}
+
+/* Process */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  counter-reset: step;
+}
+
+.stepc {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 32px;
+  position: relative;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.stepc:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-4px);
+}
+
+.stepc::before {
+  counter-increment: step;
+  content: "0" counter(step);
+  font-family: var(--fd);
+  font-weight: 900;
+  font-size: 48px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: block;
+  margin-bottom: 16px;
+  line-height: 1;
+}
+
+.stepc h3 {
+  font-family: var(--fd);
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+
+.stepc p {
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Contact */
+.contactbox {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 60px 32px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.contactbox::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.contactbox > * {
+  position: relative;
+  z-index: 1;
+}
+
+.contactbox p {
+  color: var(--text-muted);
+  max-width: 560px;
+  margin: 16px auto 32px;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+.linksrow {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 40px 24px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+footer img {
+  height: 24px;
+  width: auto;
+  background: white;
+  padding: 4px;
+  border-radius: 6px;
+}
+
+/* Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hero { padding-top: 120px; }
+  .hero-logo-wrap img { width: 120px; padding: 16px; }
+  .cta { flex-direction: column; width: 100%; }
+  .btn { width: 100%; }
+  section { padding: 60px 0; }
+  .grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
 <body>
-<canvas id="fx"></canvas>
-<div id="cursor"></div>
 
-<!-- reusable logo symbol -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-  <linearGradient id="lgD" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#AEBDD4"/></linearGradient>
-  <linearGradient id="lgA" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#0B5CFF"/><stop offset="1" stop-color="#00E0FF"/></linearGradient>
-</defs></svg>
+<canvas id="particles"></canvas>
 
-<header>
+<header id="header">
   <nav class="nav">
-    <a href="#top" class="logo">
-      <svg viewBox="0 0 120 120"><path d="M40 22 L62 22 C84 22 96 40 96 60 C96 80 84 98 62 98 L40 98 Z" fill="none" stroke="url(#lgD)" stroke-width="15"/><path d="M22 76 L48 76 L42 90 L80 52 L60 52 L66 38 L32 38 L38 52 L22 52 Z" fill="url(#lgA)"/></svg>
-      D <b>Creator</b>
+    <a href="#" class="logo">
+      <div class="logo-icon"><img src="logo.png" alt="DCreator"></div>
+      DCreator
     </a>
-    <button class="burger" id="burger" aria-label="Меню">☰</button>
-    <div class="nav-links" id="links">
-      <a href="#why" data-i18n="nav.why">Почему я</a>
+    <div class="nav-links">
+      <a href="#about" data-i18n="nav.about">Обо мне</a>
       <a href="#services" data-i18n="nav.services">Услуги</a>
-      <a href="#cases" data-i18n="nav.cases">Кейсы</a>
-      <a href="#tools" data-i18n="nav.tools">Инструменты</a>
-      <button class="lang-btn" id="lang">EN</button>
+      <a href="#work" data-i18n="nav.work">Работы</a>
+      <a href="#contact" data-i18n="nav.contact">Контакты</a>
+      <button class="lang-btn" id="langToggle">EN</button>
     </div>
-    <button class="nav-cta" data-i18n="nav.cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Обсудить проект</button>
   </nav>
 </header>
 
-<main id="top">
-  <!-- HERO -->
+<main>
   <section class="hero">
-    <div>
-      <div class="kicker" data-i18n="hero.kicker">Веб-разработка · SEO · ИИ</div>
-      <h1><span data-i18n="hero.h1a">Сайты, которые</span> <span class="grad" id="typed"></span><span class="caret"></span><br><span data-i18n="hero.h1b">а не просто существуют</span></h1>
-      <p data-i18n="hero.sub">Я Владислав, основатель DCreator. 6+ лет закрываю полный цикл в одних руках: разработка, редизайн, SEO и ИИ-интеграции. Один ответственный от брифа до измеримого результата.</p>
-      <div class="cta">
-        <button class="btn p mag" data-i18n="hero.cta1" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Получить разбор бесплатно</button>
-        <a class="btn s mag" href="https://github.com/morfiusmatrix66-code" target="_blank" rel="noopener"><span data-i18n="hero.cta2">Смотреть код</span> ↗</a>
-      </div>
-    </div>
-    <div class="hero-art">
-      <div class="orbit o1"></div>
-      <div class="orbit o2"></div>
-      <span class="spark s1"></span><span class="spark s2"></span><span class="spark s3"></span>
-      <svg viewBox="0 0 120 120" class="mark-anim">
-        <path class="dpath" d="M40 22 L62 22 C84 22 96 40 96 60 C96 80 84 98 62 98 L40 98 Z" fill="none" stroke="url(#lgD)" stroke-width="15" stroke-linejoin="round"/>
-        <path class="apath" d="M22 76 L48 76 L42 90 L80 52 L60 52 L66 38 L32 38 L38 52 L22 52 Z" fill="url(#lgA)"/>
-      </svg>
+    <div class="hero-logo-wrap"><img src="logo.png" alt="DCreator logo"></div>
+    <div class="kicker" data-i18n="hero.kicker">Веб-разработка · SEO · ИИ-интеграции</div>
+    <h1 data-i18n="hero.title">Сайты, которые <span>приносят заявки</span>, а не просто существуют</h1>
+    <p data-i18n="hero.sub">Я Владислав, основатель DCreator. 6+ лет закрываю полный цикл в одних руках: разработка, редизайн, дизайн, SEO, реклама и ИИ-интеграции. Один ответственный от брифа до измеримого результата.</p>
+    <div class="cta">
+      <a href="#contact" class="btn p"><span data-i18n="hero.cta1">Связаться</span></a>
+      <a href="https://github.com/morfiusmatrix66-code" target="_blank" class="btn s">GitHub ↗</a>
     </div>
   </section>
 
-  <!-- FACTS -->
-  <div class="facts reveal">
-    <div class="fact"><b data-count="6" data-suffix="+">0</b><span data-i18n="f1">лет в веб-разработке</span></div>
-    <div class="fact"><b data-count="50" data-suffix="+">0</b><span data-i18n="f2">реализованных задач</span></div>
-    <div class="fact"><b data-count="40" data-suffix="%">0</b><span data-i18n="f3">средний рост заявок</span></div>
-    <div class="fact"><b data-count="24" data-suffix="h">0</b><span data-i18n="f4">среднее время ответа</span></div>
-  </div>
-
-  <!-- WHY -->
-  <section id="why" class="reveal">
-    <div class="sec-head">
-      <div class="eyebrow" data-i18n="why.eyebrow">Чем я отличаюсь</div>
-      <h2 data-i18n="why.h">Не подрядчик-конструктор, а инженер продукта</h2>
-      <p data-i18n="why.p">Три вещи, которые заказчик получает со мной и редко получает с фрилансерами.</p>
-    </div>
-    <div class="why">
-      <div class="wcard tilt">
-        <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div>
-        <h3 data-i18n="w1t">Меряю результат, а не пиксели</h3>
-        <p data-i18n="w1d">Успех — это заявки, трафик и выручка. Настраиваю аналитику так, чтобы вы видели, что работает.</p>
+  <section id="about" class="reveal">
+    <h2 data-i18n="about.h">Обо мне</h2>
+    <div class="sub" data-i18n="about.sub">Инженерный подход к веб-разработке</div>
+    <div class="grid">
+      <div class="card">
+        <h3 data-i18n="about.c1t">Техническая база</h3>
+        <p data-i18n="about.c1d">Высшее образование инженера-программиста. Пишу чистый, адаптивный код, а не просто "собираю конструкторы".</p>
       </div>
-      <div class="wcard tilt">
-        <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div>
-        <h3 data-i18n="w2t">ИИ вместо рутины</h3>
-        <p data-i18n="w2d">Внедряю ИИ-ассистентов и автоматизацию в реальный продукт, а не «демо ради демо».</p>
+      <div class="card">
+        <h3 data-i18n="about.c2t">Full-cycle подход</h3>
+        <p data-i18n="about.c2d">Не передаю задачу по цепочке. От прототипа и дизайна до SEO-настройки и аналитики — всё под моим контролем.</p>
       </div>
-      <div class="wcard tilt">
-        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
-        <h3 data-i18n="w3t">Один ответственный</h3>
-        <p data-i18n="w3d">От прототипа и дизайна до кода, SEO и запуска — без передачи задачи по цепочке подрядчиков.</p>
+      <div class="card">
+        <h3 data-i18n="about.c3t">Open Source</h3>
+        <p data-i18n="about.c3d">Сам создаю и выкладываю в открытый доступ инструменты для автоматизации: генераторы обложек, типографические лаборатории.</p>
       </div>
     </div>
   </section>
 
-  <!-- SERVICES -->
   <section id="services" class="reveal">
-    <div class="sec-head">
-      <div class="eyebrow" data-i18n="sv.eyebrow">Услуги</div>
-      <h2 data-i18n="sv.h">Полный цикл в одних руках</h2>
-      <p data-i18n="sv.p">Выберите направление — покажу, что входит и на чём работаю.</p>
-    </div>
-    <div class="tabs" id="tabs">
-      <button class="tab on" data-t="0" data-i18n="t1">Разработка</button>
-      <button class="tab" data-t="1" data-i18n="t2">Редизайн</button>
-      <button class="tab" data-t="2" data-i18n="t3">SEO и реклама</button>
-      <button class="tab" data-t="3" data-i18n="t4">ИИ-интеграции</button>
-    </div>
-    <div class="tabpanel on" data-p="0">
-      <div><h3 data-i18n="p1h">Разработка под ключ</h3><p data-i18n="p1p">Лендинги, корпоративные сайты и интернет-магазины: адаптивные, быстрые, с чистой вёрсткой и настроенной аналитикой.</p><div class="chips"><span class="chip">HTML/CSS</span><span class="chip">JavaScript</span><span class="chip">React</span><span class="chip">Node.js</span><span class="chip">WordPress</span></div></div>
-      <div class="tabviz"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3M7 9l2 2-2 2M11 13h4"/></svg></div>
-    </div>
-    <div class="tabpanel" data-p="1">
-      <div><h3 data-i18n="p2h">Редизайн</h3><p data-i18n="p2p">Превращаю устаревшие сайты в современные продукты: новый интерфейс, ускорение загрузки и понятный путь к заявке.</p><div class="chips"><span class="chip">Figma</span><span class="chip">UI/UX</span><span class="chip">CRO</span><span class="chip">Performance</span></div></div>
-      <div class="tabviz"><svg viewBox="0 0 24 24"><path d="M3 12h6l3-8 3 8h6"/><circle cx="12" cy="16" r="3"/></svg></div>
-    </div>
-    <div class="tabpanel" data-p="2">
-      <div><h3 data-i18n="p3h">SEO и реклама</h3><p data-i18n="p3p">Техническое и внутреннее SEO, семантика, скорость. Настройка кампаний и отчётность по стоимости лида.</p><div class="chips"><span class="chip">Техническое SEO</span><span class="chip">Google Ads</span><span class="chip">Метрика</span><span class="chip">GA4</span></div></div>
-      <div class="tabviz"><svg viewBox="0 0 24 24"><path d="M3 17l5-5 4 4 8-9"/><path d="M16 7h5v5"/></svg></div>
-    </div>
-    <div class="tabpanel" data-p="3">
-      <div><h3 data-i18n="p4h">ИИ-интеграции</h3><p data-i18n="p4p">Чат-ассистенты, контент-конвейеры и автоматизация рутины, встроенные в реальный продукт.</p><div class="chips"><span class="chip">LLM API</span><span class="chip">Chat-боты</span><span class="chip">Автоматизация</span><span class="chip">Prompt</span></div></div>
-      <div class="tabviz"><svg viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="10" rx="2"/><path d="M9 13h.01M15 13h.01M12 8V5M10 5h4"/></svg></div>
+    <h2 data-i18n="services.h">Услуги</h2>
+    <div class="sub" data-i18n="services.sub">Полный цикл в одних руках</div>
+    <div class="grid">
+      <div class="card"><span class="n">01</span><h3 data-i18n="s1t">Разработка под ключ</h3><p data-i18n="s1d">Лендинги, корпоративные сайты и e-commerce: адаптивные, быстрые, с настроенной аналитикой.</p></div>
+      <div class="card"><span class="n">02</span><h3 data-i18n="s2t">Редизайн</h3><p data-i18n="s2d">Превращаю устаревшие сайты в современные продукты: новый интерфейс, ускорение загрузки, понятный путь к заявке.</p></div>
+      <div class="card"><span class="n">03</span><h3 data-i18n="s3t">SEO и реклама</h3><p data-i18n="s3d">Техническое SEO, семантика, оптимизация скорости. Настройка кампаний и отчётность по стоимости лида.</p></div>
+      <div class="card"><span class="n">04</span><h3 data-i18n="s4t">ИИ-интеграции</h3><p data-i18n="s4d">Чат-ассистенты, контент-конвейеры и автоматизация рутины, встроенные в реальный продукт.</p></div>
     </div>
   </section>
 
-  <!-- CASES -->
-  <section id="cases" class="reveal">
-    <div class="sec-head">
-      <div class="eyebrow" data-i18n="cs.eyebrow">Результаты</div>
-      <h2 data-i18n="cs.h">Было → Стало</h2>
-      <p data-i18n="cs.p">Замените цифры на свои реальные кейсы — это то, что продаёт лучше любых слов.</p>
-    </div>
-    <div class="cases">
-      <div class="case">
-        <span class="tag" data-i18n="cs.tag1">Редизайн + SEO</span>
-        <h3 data-i18n="cs1h">Сайт услуг: рост заявок</h3>
-        <div class="ba">
-          <div class="box before"><b>~30</b><span data-i18n="cs1b">заявок / мес</span></div>
-          <div class="arr">→</div>
-          <div class="box after"><b>~85</b><span data-i18n="cs1a">заявок / мес</span></div>
-        </div>
-        <p data-i18n="cs1p">Новая структура, оффер и скорость загрузки; тех-SEO и аналитика. +180% заявок за 3 месяца.</p>
+  <section id="work" class="reveal">
+    <h2 data-i18n="work.h">Избранные работы</h2>
+    <div class="sub" data-i18n="work.sub">Инструменты, которые я построил и использую сам</div>
+    <div class="grid">
+      <div class="card">
+        <h3>Cover Studio</h3>
+        <p data-i18n="w1d">Студия обложек ВК и Kwork: живые safe-зоны под мобильный кроп, экспорт PNG/SVG в полном размере.</p>
+        <a href="https://github.com/morfiusmatrix66-code" target="_blank" style="display:inline-block; margin-top:16px; font-size:14px; font-weight:600; color:var(--accent);">GitHub →</a>
       </div>
-      <div class="case">
-        <span class="tag" data-i18n="cs.tag2">ИИ-автоматизация</span>
-        <h3 data-i18n="cs2h">Магазин: автоответы и контент</h3>
-        <div class="ba">
-          <div class="box before"><b>40ч</b><span data-i18n="cs2b">рутины / нед</span></div>
-          <div class="arr">→</div>
-          <div class="box after"><b>8ч</b><span data-i18n="cs2a">рутины / нед</span></div>
-        </div>
-        <p data-i18n="cs2p">ИИ-ассистент для первичных вопросов + генерация карточек. Команда освобождена на продажи.</p>
+      <div class="card">
+        <h3>Blade Type Lab</h3>
+        <p data-i18n="w2d">Кузница «лезвий» для кириллических заголовков: наклон, срезы и острия на терминалях, экспорт SVG/CSS.</p>
+        <a href="https://github.com/morfiusmatrix66-code" target="_blank" style="display:inline-block; margin-top:16px; font-size:14px; font-weight:600; color:var(--accent);">GitHub →</a>
+      </div>
+      <div class="card">
+        <h3>Logo Lab</h3>
+        <p data-i18n="w3d">Векторный конструктор фирменного знака: палитры, подложки-аватары, градиенты и свечение.</p>
+        <a href="https://github.com/morfiusmatrix66-code" target="_blank" style="display:inline-block; margin-top:16px; font-size:14px; font-weight:600; color:var(--accent);">GitHub →</a>
       </div>
     </div>
   </section>
 
-  <!-- TOOLS -->
-  <section id="tools" class="reveal">
-    <div class="sec-head">
-      <div class="eyebrow" data-i18n="tl.eyebrow">Open source</div>
-      <h2 data-i18n="tl.h">Инструменты, которые я построил сам</h2>
-      <p data-i18n="tl.p">Не только делаю сайты — пишу продукты, которые автоматизируют рутину. Код открыт.</p>
-    </div>
-    <div class="tools">
-      <div class="tool"><div class="code">/cover-studio</div><h3>Cover Studio</h3><p data-i18n="tl1d">Обложки ВК и Kwork с живыми safe-зонами под мобильный кроп и экспортом PNG/SVG.</p><a href="https://github.com/morfiusmatrix66-code" target="_blank" rel="noopener">GitHub →</a></div>
-      <div class="tool"><div class="code">/blade-type-lab</div><h3>Blade Type Lab</h3><p data-i18n="tl2d">Кузница «лезвий» для кириллических заголовков: наклон, срезы, экспорт SVG/CSS.</p><a href="https://github.com/morfiusmatrix66-code" target="_blank" rel="noopener">GitHub →</a></div>
-      <div class="tool"><div class="code">/logo-lab</div><h3>Logo Lab</h3><p data-i18n="tl3d">Векторный конструктор фирменного знака: палитры, аватар-подложки, градиенты.</p><a href="https://github.com/morfiusmatrix66-code" target="_blank" rel="noopener">GitHub →</a></div>
-    </div>
-  </section>
-
-  <!-- PROCESS -->
-  <section class="reveal">
-    <div class="sec-head">
-      <div class="eyebrow" data-i18n="pr.eyebrow">Процесс</div>
-      <h2 data-i18n="pr.h">Четыре шага до результата</h2>
-    </div>
-    <div class="proc">
-      <div class="pstep"><div class="dot">1</div><h3 data-i18n="pr1t">Бриф и цели</h3><p data-i18n="pr1d">Разбираем задачу и метрику успеха: заявки, трафик или выручка.</p></div>
-      <div class="pstep"><div class="dot">2</div><h3 data-i18n="pr2t">Прототип</h3><p data-i18n="pr2d">Структура и оффер сначала — согласуем до разработки.</p></div>
-      <div class="pstep"><div class="dot">3</div><h3 data-i18n="pr3t">Сборка и запуск</h3><p data-i18n="pr3d">Чистый код, скорость, аналитика, SEO-база, передача доступов.</p></div>
-      <div class="pstep"><div class="dot">4</div><h3 data-i18n="pr4t">Рост</h3><p data-i18n="pr4d">SEO, реклама и ИИ-автоматизация. Смотрим цифры и улучшаем.</p></div>
-    </div>
-  </section>
-
-  <!-- FINAL CTA -->
   <section id="contact" class="reveal">
-    <div class="final">
-      <h2 data-i18n="fn.h">Разберу вашу задачу бесплатно за 10 минут</h2>
-      <p data-i18n="fn.p">Напишите, что за сайт и какая цель — вернусь с планом и честной оценкой. Без обязательств.</p>
-      <div class="cta">
-        <a class="btn p mag" href="mailto:vladislav.dcreator@gmail.com" data-i18n="fn.email">Написать на почту</a>
-        <a class="btn s mag" href="https://t.me/D_Creators" target="_blank" rel="noopener">Telegram</a>
-        <a class="btn s mag" href="https://www.linkedin.com/in/vladislav-dcreator" target="_blank" rel="noopener">LinkedIn</a>
+    <div class="contactbox">
+      <h2 data-i18n="contact.h">Связаться</h2>
+      <p data-i18n="contact.p">Открыт к удалённой работе в штате и на контракте (US/EU), фриланс-проектам и сотрудничеству. Отвечаю в течение дня. Напишите — разберу вашу задачу бесплатно.</p>
+      <div class="linksrow">
+        <a href="mailto:vladislav.dcreator@gmail.com" class="btn p" data-i18n="contact.email"><span>Написать на почту</span></a>
+        <a href="https://t.me/D_Creators" target="_blank" class="btn s">Telegram</a>
+        <a href="https://www.linkedin.com/in/vladislav-dcreator" target="_blank" class="btn s">LinkedIn</a>
+        <a href="https://github.com/morfiusmatrix66-code" target="_blank" class="btn s">GitHub</a>
       </div>
-      <div class="note" data-i18n="fn.note">Отвечаю в течение дня · Открыт к remote US/EU и фрилансу</div>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="flogo">
-    <svg viewBox="0 0 120 120"><path d="M40 22 L62 22 C84 22 96 40 96 60 C96 80 84 98 62 98 L40 98 Z" fill="none" stroke="url(#lgD)" stroke-width="15"/><path d="M22 76 L48 76 L42 90 L80 52 L60 52 L66 38 L32 38 L38 52 L22 52 Z" fill="url(#lgA)"/></svg>
-    DCreator
-  </div>
-  <div class="flinks">
-    <a href="#why" data-i18n="nav.why">Почему я</a>
-    <a href="#services" data-i18n="nav.services">Услуги</a>
-    <a href="#cases" data-i18n="nav.cases">Кейсы</a>
-    <a href="https://github.com/morfiusmatrix66-code" target="_blank" rel="noopener">GitHub</a>
-  </div>
-  <div class="copy">© 2026 DCreator · <span data-i18n="ft.copy">Сделано кодом, не шаблоном</span></div>
+  <img src="logo.png" alt="D">
+  <span data-i18n="footer">Сделано DCreator · без шаблонов · HTML/CSS/JS</span>
 </footer>
 
 <script>
-"use strict";
-const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
-const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
+// Анимированные частицы
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+let particles = [];
 
-/* i18n */
-const I18N={
-ru:{"nav.why":"Почему я","nav.services":"Услуги","nav.cases":"Кейсы","nav.tools":"Инструменты","nav.cta":"Обсудить проект",
-"hero.kicker":"Веб-разработка · SEO · ИИ","hero.h1a":"Сайты, которые","hero.h1b":"а не просто существуют",
-"hero.sub":"Я Владислав, основатель DCreator. 6+ лет закрываю полный цикл в одних руках: разработка, редизайн, SEO и ИИ-интеграции. Один ответственный от брифа до измеримого результата.",
-"hero.cta1":"Получить разбор бесплатно","hero.cta2":"Смотреть код",
-"f1":"лет в веб-разработке","f2":"реализованных задач","f3":"средний рост заявок","f4":"среднее время ответа",
-"why.eyebrow":"Чем я отличаюсь","why.h":"Не подрядчик-конструктор, а инженер продукта","why.p":"Три вещи, которые заказчик получает со мной и редко получает с фрилансерами.",
-"w1t":"Меряю результат, а не пиксели","w1d":"Успех — это заявки, трафик и выручка. Настраиваю аналитику так, чтобы вы видели, что работает.",
-"w2t":"ИИ вместо рутины","w2d":"Внедряю ИИ-ассистентов и автоматизацию в реальный продукт, а не «демо ради демо».",
-"w3t":"Один ответственный","w3d":"От прототипа и дизайна до кода, SEO и запуска — без передачи задачи по цепочке подрядчиков.",
-"sv.eyebrow":"Услуги","sv.h":"Полный цикл в одних руках","sv.p":"Выберите направление — покажу, что входит и на чём работаю.",
-"t1":"Разработка","t2":"Редизайн","t3":"SEO и реклама","t4":"ИИ-интеграции",
-"p1h":"Разработка под ключ","p1p":"Лендинги, корпоративные сайты и интернет-магазины: адаптивные, быстрые, с чистой вёрсткой и настроенной аналитикой.",
-"p2h":"Редизайн","p2p":"Превращаю устаревшие сайты в современные продукты: новый интерфейс, ускорение загрузки и понятный путь к заявке.",
-"p3h":"SEO и реклама","p3p":"Техническое и внутреннее SEO, семантика, скорость. Настройка кампаний и отчётность по стоимости лида.",
-"p4h":"ИИ-интеграции","p4p":"Чат-ассистенты, контент-конвейеры и автоматизация рутины, встроенные в реальный продукт.",
-"cs.eyebrow":"Результаты","cs.h":"Было → Стало","cs.p":"Замените цифры на свои реальные кейсы — это то, что продаёт лучше любых слов.",
-"cs.tag1":"Редизайн + SEO","cs1h":"Сайт услуг: рост заявок","cs1b":"заявок / мес","cs1a":"заявок / мес","cs1p":"Новая структура, оффер и скорость загрузки; тех-SEO и аналитика. +180% заявок за 3 месяца.",
-"cs.tag2":"ИИ-автоматизация","cs2h":"Магазин: автоответы и контент","cs2b":"рутины / нед","cs2a":"рутины / нед","cs2p":"ИИ-ассистент для первичных вопросов + генерация карточек. Команда освобождена на продажи.",
-"tl.eyebrow":"Open source","tl.h":"Инструменты, которые я построил сам","tl.p":"Не только делаю сайты — пишу продукты, которые автоматизируют рутину. Код открыт.",
-"tl1d":"Обложки ВК и Kwork с живыми safe-зонами под мобильный кроп и экспортом PNG/SVG.","tl2d":"Кузница «лезвий» для кириллических заголовков: наклон, срезы, экспорт SVG/CSS.","tl3d":"Векторный конструктор фирменного знака: палитры, аватар-подложки, градиенты.",
-"pr.eyebrow":"Процесс","pr.h":"Четыре шага до результата","pr1t":"Бриф и цели","pr1d":"Разбираем задачу и метрику успеха: заявки, трафик или выручка.","pr2t":"Прототип","pr2d":"Структура и оффер сначала — согласуем до разработки.","pr3t":"Сборка и запуск","pr3d":"Чистый код, скорость, аналитика, SEO-база, передача доступов.","pr4t":"Рост","pr4d":"SEO, реклама и ИИ-автоматизация. Смотрим цифры и улучшаем.",
-"fn.h":"Разберу вашу задачу бесплатно за 10 минут","fn.p":"Напишите, что за сайт и какая цель — вернусь с планом и честной оценкой. Без обязательств.","fn.email":"Написать на почту","fn.note":"Отвечаю в течение дня · Открыт к remote US/EU и фрилансу",
-"ft.copy":"Сделано кодом, не шаблоном"},
-en:{"nav.why":"Why me","nav.services":"Services","nav.cases":"Cases","nav.tools":"Tools","nav.cta":"Discuss a project",
-"hero.kicker":"Web development · SEO · AI","hero.h1a":"Websites that","hero.h1b":"not just exist",
-"hero.sub":"I'm Vladislav, founder of DCreator. For 6+ years I cover the full cycle in one pair of hands: development, redesign, SEO and AI integrations. One owner from brief to measurable result.",
-"hero.cta1":"Get a free review","hero.cta2":"See the code",
-"f1":"years in web development","f2":"tasks delivered","f3":"avg. lead growth","f4":"avg. reply time",
-"why.eyebrow":"What sets me apart","why.h":"Not a template contractor — a product engineer","why.p":"Three things a client gets with me and rarely gets from freelancers.",
-"w1t":"I measure results, not pixels","w1d":"Success is leads, traffic and revenue. I set up analytics so you see what works.",
-"w2t":"AI instead of routine","w2d":"I wire AI assistants and automation into real products, not demos for the sake of demos.",
-"w3t":"One person accountable","w3d":"From prototype and design to code, SEO and launch — no passing the task down a chain.",
-"sv.eyebrow":"Services","sv.h":"Full cycle in one pair of hands","sv.p":"Pick a direction — I'll show what's included and the stack.",
-"t1":"Development","t2":"Redesign","t3":"SEO & Ads","t4":"AI integrations",
-"p1h":"End-to-end development","p1p":"Landing pages, corporate sites and e-commerce: responsive, fast, clean markup, analytics configured.",
-"p2h":"Redesign","p2p":"Turning outdated sites into modern products: new UI, faster loads and a clear path to a lead.",
-"p3h":"SEO & ads","p3p":"Technical and on-page SEO, semantics, speed. Campaign setup and reporting on cost per lead.",
-"p4h":"AI integrations","p4p":"Chat assistants, content pipelines and routine automation wired into real products.",
-"cs.eyebrow":"Results","cs.h":"Before → After","cs.p":"Replace the numbers with your real cases — this sells better than any words.",
-"cs.tag1":"Redesign + SEO","cs1h":"Services site: lead growth","cs1b":"leads / mo","cs1a":"leads / mo","cs1p":"New structure, offer and load speed; tech SEO and analytics. +180% leads in 3 months.",
-"cs.tag2":"AI automation","cs2h":"Store: auto-replies & content","cs2b":"routine / wk","cs2a":"routine / wk","cs2p":"AI assistant for first-line questions + card generation. The team is freed for sales.",
-"tl.eyebrow":"Open source","tl.h":"Tools I built myself","tl.p":"I don't just build sites — I write products that automate routine. Code is public.",
-"tl1d":"VK & Kwork covers with live mobile safe-zones and PNG/SVG export.","tl2d":"A forge of 'blades' for Cyrillic headlines: skew, cuts, SVG/CSS export.","tl3d":"Vector constructor of the brand mark: palettes, avatar containers, gradients.",
-"pr.eyebrow":"Process","pr.h":"Four steps to the result","pr1t":"Brief & goals","pr1d":"We unpack the task and success metric: leads, traffic or revenue.","pr2t":"Prototype","pr2d":"Structure and offer first — approved before development.","pr3t":"Build & launch","pr3d":"Clean code, speed, analytics, SEO base, handover of access.","pr4t":"Growth","pr4d":"SEO, ads and AI automation. We watch the numbers and improve.",
-"fn.h":"I'll review your task for free in 10 minutes","fn.p":"Tell me what site and what goal — I'll reply with a plan and an honest estimate. No commitment.","fn.email":"Email me","fn.note":"Reply within a day · Open to remote US/EU and freelance",
-"ft.copy":"Built with code, not a template"}
-};
-let lang="ru";
-const typedWords={ru:["приносят заявки","продают","растут в SEO","работают с ИИ"],en:["bring leads","sell","grow in SEO","run on AI"]};
-function applyLang(){
-  const d=I18N[lang];
-  $$("[data-i18n]").forEach(el=>{const k=el.getAttribute("data-i18n");if(d[k]!=null)el.textContent=d[k];});
-  $("#lang").textContent=lang==="ru"?"EN":"RU";
-  document.documentElement.lang=lang;
-  startTyped();
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 }
-$("#lang").onclick=()=>{lang=lang==="ru"?"en":"ru";applyLang();};
 
-/* typing */
-let typeTimer=null;
-function startTyped(){
-  clearInterval(typeTimer);
-  const el=$("#typed");const words=typedWords[lang];let wi=0;
-  if(reduced){el.textContent=words[0];return;}
-  let ci=0,del=false;
-  function step(){
-    const w=words[wi];
-    if(!del){ci++;el.textContent=w.slice(0,ci);if(ci===w.length){del=true;return setTimeout(step,1600);}}
-    else{ci--;el.textContent=w.slice(0,ci);if(ci===0){del=false;wi=(wi+1)%words.length;}}
-    setTimeout(step,del?55:95);
+window.addEventListener('resize', resize);
+resize();
+
+class Particle {
+  constructor() {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.size = Math.random() * 2 + 0.5;
+    this.speedX = (Math.random() - 0.5) * 0.5;
+    this.speedY = (Math.random() - 0.5) * 0.5;
+    this.opacity = Math.random() * 0.5 + 0.1;
   }
-  step();
+
+  update() {
+    this.x += this.speedX;
+    this.y += this.speedY;
+
+    if (this.x > canvas.width) this.x = 0;
+    if (this.x < 0) this.x = canvas.width;
+    if (this.y > canvas.height) this.y = 0;
+    if (this.y < 0) this.y = canvas.height;
+  }
+
+  draw() {
+    ctx.fillStyle = `rgba(56, 189, 248, ${this.opacity})`;
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fill();
+  }
 }
 
-/* counters */
-function runCounters(){
-  $$("[data-count]").forEach(el=>{
-    const target=+el.dataset.count,suf=el.dataset.suffix||"";
-    if(reduced){el.textContent=target+suf;return;}
-    const dur=1400,t0=performance.now();
-    function tick(now){const p=Math.min(1,(now-t0)/dur);const e=1-Math.pow(1-p,3);el.textContent=Math.round(target*e)+suf;if(p<1)requestAnimationFrame(tick);}
-    requestAnimationFrame(tick);
+function initParticles() {
+  particles = [];
+  const numParticles = Math.min(100, (canvas.width * canvas.height) / 15000);
+  for (let i = 0; i < numParticles; i++) {
+    particles.push(new Particle());
+  }
+}
+
+function animateParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach(p => {
+    p.update();
+    p.draw();
   });
+  requestAnimationFrame(animateParticles);
 }
 
-/* tabs */
-$("#tabs").addEventListener("click",e=>{
-  const b=e.target.closest(".tab");if(!b)return;
-  $$(".tab").forEach(t=>t.classList.remove("on"));b.classList.add("on");
-  const i=b.dataset.t;$$(".tabpanel").forEach(p=>p.classList.toggle("on",p.dataset.p===i));
+initParticles();
+animateParticles();
+
+// Header scroll effect
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
 });
 
-/* burger */
-$("#burger").onclick=()=>$("#links").classList.toggle("open");
-$$("#links a").forEach(a=>a.onclick=()=>$("#links").classList.remove("open"));
+// Языковой словарь
+const I18N = {
+  ru: {
+    "nav.about": "Обо мне", "nav.services": "Услуги", "nav.work": "Работы", "nav.contact": "Контакты",
+    "hero.kicker": "Веб-разработка · SEO · ИИ-интеграции",
+    "hero.title": "Сайты, которые <span>приносят заявки</span>, а не просто существуют",
+    "hero.sub": "Я Владислав, основатель DCreator. 6+ лет закрываю полный цикл в одних руках: разработка, редизайн, дизайн, SEO, реклама и ИИ-интеграции. Один ответственный от брифа до измеримого результата.",
+    "hero.cta1": "Связаться",
+    "about.h": "Обо мне", "about.sub": "Инженерный подход к веб-разработке",
+    "about.c1t": "Техническая база", "about.c1d": "Высшее образование инженера-программиста. Пишу чистый, адаптивный код, а не просто 'собираю конструкторы'.",
+    "about.c2t": "Full-cycle подход", "about.c2d": "Не передаю задачу по цепочке. От прототипа и дизайна до SEO-настройки и аналитики — всё под моим контролем.",
+    "about.c3t": "Open Source", "about.c3d": "Сам создаю и выкладываю в открытый доступ инструменты для автоматизации: генераторы обложек, типографические лаборатории.",
+    "services.h": "Услуги", "services.sub": "Полный цикл в одних руках",
+    "s1t": "Разработка под ключ", "s1d": "Лендинги, корпоративные сайты и e-commerce: адаптивные, быстрые, с настроенной аналитикой.",
+    "s2t": "Редизайн", "s2d": "Превращаю устаревшие сайты в современные продукты: новый интерфейс, ускорение загрузки, понятный путь к заявке.",
+    "s3t": "SEO и реклама", "s3d": "Техническое SEO, семантика, оптимизация скорости. Настройка кампаний и отчётность по стоимости лида.",
+    "s4t": "ИИ-интеграции", "s4d": "Чат-ассистенты, контент-конвейеры и автоматизация рутины, встроенные в реальный продукт.",
+    "work.h": "Избранные работы", "work.sub": "Инструменты, которые я построил и использую сам",
+    "w1d": "Студия обложек ВК и Kwork: живые safe-зоны под мобильный кроп, экспорт PNG/SVG в полном размере.",
+    "w2d": "Кузница «лезвий» для кириллических заголовков: наклон, срезы и острия на терминалях, экспорт SVG/CSS.",
+    "w3d": "Векторный конструктор фирменного знака: палитры, подложки-аватары, градиенты и свечение.",
+    "contact.h": "Связаться",
+    "contact.p": "Открыт к удалённой работе в штате и на контракте (US/EU), фриланс-проектам и сотрудничеству. Отвечаю в течение дня. Напишите — разберу вашу задачу бесплатно.",
+    "contact.email": "Написать на почту",
+    "footer": "Сделано DCreator · без шаблонов · HTML/CSS/JS"
+  },
+  en: {
+    "nav.about": "About", "nav.services": "Services", "nav.work": "Work", "nav.contact": "Contact",
+    "hero.kicker": "Web development · SEO · AI integrations",
+    "hero.title": "Websites that <span>bring leads</span>, not just exist",
+    "hero.sub": "I'm Vladislav, founder of DCreator. For 6+ years I've covered the full cycle in one pair of hands: development, redesign, design, SEO, paid ads and AI integrations. One owner from brief to measurable result.",
+    "hero.cta1": "Get in touch",
+    "about.h": "About", "about.sub": "Engineering approach to web development",
+    "about.c1t": "Technical base", "about.c1d": "Degree in software engineering. I write clean, responsive code, not just 'assemble builders'.",
+    "about.c2t": "Full-cycle approach", "about.c2d": "I don't pass tasks down the chain. From prototype and design to SEO setup and analytics — everything is under my control.",
+    "about.c3t": "Open Source", "about.c3d": "I build and open-source my own automation tools: cover generators, typography labs.",
+    "services.h": "Services", "services.sub": "Full cycle in one pair of hands",
+    "s1t": "End-to-end development", "s1d": "Landing pages, corporate sites and e-commerce: responsive, fast, with analytics configured.",
+    "s2t": "Redesign", "s2d": "Turning outdated sites into modern products: new UI, faster load times, a clear path to conversion.",
+    "s3t": "SEO & ads", "s3d": "Technical SEO, semantics, speed optimization. Campaign setup and reporting on cost per lead.",
+    "s4t": "AI integrations", "s4d": "Chat assistants, content pipelines and routine automation wired into real products.",
+    "work.h": "Selected work", "work.sub": "Tools I built and use myself",
+    "w1d": "VK & Kwork cover studio: live mobile safe-zones, full-size PNG/SVG export.",
+    "w2d": "A forge of 'blades' for Cyrillic headlines: skew, cuts and points on terminals, SVG/CSS export.",
+    "w3d": "Vector constructor of the brand mark: palettes, avatar containers, gradients and glow.",
+    "contact.h": "Get in touch",
+    "contact.p": "Open to remote full-time & contract roles (US/EU), freelance projects and collaborations. I reply within a day. Write me — I'll review your task for free.",
+    "contact.email": "Email me",
+    "footer": "Built by DCreator · no templates · HTML/CSS/JS"
+  }
+};
 
-/* reveal + counters on view */
-const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add("in");if(en.target.querySelector("[data-count]"))runCounters();io.unobserve(en.target);}}),{threshold:.18});
-$$(".reveal").forEach(el=>io.observe(el));
+let currentLang = "ru";
+const langToggle = document.getElementById("langToggle");
 
-/* tilt cards */
-if(!reduced&&matchMedia("(pointer:fine)").matches){
-  $$(".tilt").forEach(card=>{
-    card.addEventListener("mousemove",e=>{
-      const r=card.getBoundingClientRect();const x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
-      card.style.setProperty("--mx",(x*100)+"%");card.style.setProperty("--my",(y*100)+"%");
-      card.style.transform=`perspective(800px) rotateY(${(x-.5)*10}deg) rotateX(${-(y-.5)*10}deg) translateY(-2px)`;
-    });
-    card.addEventListener("mouseleave",()=>card.style.transform="");
+langToggle.addEventListener("click", () => {
+  currentLang = currentLang === "ru" ? "en" : "ru";
+  langToggle.textContent = currentLang === "ru" ? "EN" : "RU";
+  document.documentElement.lang = currentLang;
+  
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    if (I18N[currentLang][key]) {
+      if (key === "hero.title") {
+        el.innerHTML = I18N[currentLang][key];
+      } else {
+        el.textContent = I18N[currentLang][key];
+      }
+    }
   });
-  /* magnetic buttons */
-  $$(".mag").forEach(btn=>{
-    btn.addEventListener("mousemove",e=>{const r=btn.getBoundingClientRect();const x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2;btn.style.transform=`translate(${x*.25}px,${y*.3}px)`;});
-    btn.addEventListener("mouseleave",()=>btn.style.transform="");
-  });
-  /* cursor glow */
-  const cur=$("#cursor");
-  addEventListener("mousemove",e=>{cur.style.display="block";cur.style.left=e.clientX+"px";cur.style.top=e.clientY+"px";});
-  $$("a,button,.tab,.card,.tool").forEach(el=>{
-    el.addEventListener("mouseenter",()=>{cur.style.width="46px";cur.style.height="46px";});
-    el.addEventListener("mouseleave",()=>{cur.style.width="26px";cur.style.height="26px";});
-  });
-}
+});
 
-/* logo draw-on animation */
-(function(){
-  const d=$(".dpath"),a=$(".apath");if(!d||reduced)return;
-  const len=d.getTotalLength();
-  d.style.strokeDasharray=len;d.style.strokeDashoffset=len;
-  a.style.opacity="0";a.style.transform="translate(-14px,14px)";a.style.transition="none";
-  requestAnimationFrame(()=>{
-    d.style.transition="stroke-dashoffset 1.4s ease .2s";d.style.strokeDashoffset="0";
-    setTimeout(()=>{a.style.transition="opacity .6s ease, transform .8s cubic-bezier(.2,.8,.2,1)";a.style.opacity="1";a.style.transform="translate(0,0)";},700);
+// Scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("active");
+    }
   });
-})();
+}, { threshold: 0.1, rootMargin: "0px 0px -100px 0px" });
 
-/* particles */
-const cv=$("#fx"),cx=cv.getContext("2d");let ps=[],W,H;
-function fit(){const d=Math.min(2,devicePixelRatio||1);W=innerWidth;H=innerHeight;cv.width=W*d;cv.height=H*d;cx.setTransform(d,0,0,d,0,0);}
-function seed(){ps=Array.from({length:Math.min(60,Math.round(W/26))},()=>({x:Math.random()*W,y:Math.random()*H,r:.5+Math.random()*1.6,s:.05+Math.random()*.18,p:Math.random()*6.28,c:Math.random()}));}
-addEventListener("resize",()=>{fit();seed();});fit();seed();
-function loop(t){cx.clearRect(0,0,W,H);
-  for(const p of ps){p.y-=p.s;if(p.y<-4)p.y=H+4;
-    cx.fillStyle=p.c>.6?"rgba(0,224,255,"+(0.08+0.14*Math.abs(Math.sin(t/900+p.p)))+")":"rgba(159,216,255,"+(0.05+0.1*Math.abs(Math.sin(t/900+p.p)))+")";
-    cx.beginPath();cx.arc(p.x,p.y,p.r,0,6.283);cx.fill();}
-  requestAnimationFrame(loop);}
-if(!reduced)requestAnimationFrame(loop);else{for(const p of ps){cx.fillStyle="rgba(159,216,255,.1)";cx.beginPath();cx.arc(p.x,p.y,p.r,0,6.283);cx.fill();}}
-
-applyLang();
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
